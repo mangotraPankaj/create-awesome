@@ -163,6 +163,7 @@
 		CD10FCAE266C90CC00A84E66 /* EDNLearnMacTests */ = {
 			isa = PBXGroup;
 			children = (
+				CD1FF61F26806A50008FCA6B /* Helpers */,
 				CDF09E4A26982E1D00F8E8D8 /* Feed Cache */,
 				CD4CC90426788C040093103C /* Feed API */,
 				CD10FCAF266C90CC00A84E66 /* EDNLearnMacTests.swift */,
@@ -202,7 +203,6 @@
 		CD4CC90426788C040093103C /* Feed API */ = {
 			isa = PBXGroup;
 			children = (
-				CD1FF61F26806A50008FCA6B /* Helpers */,
 				CD163F5B266DFD9E00835B83 /* LoadFeedFromRemoteUseCaseTests.swift */,
 				CD1FF5EA267C92D4008FCA6B /* URLSessionHTTPClientTests.swift */,
 			);
