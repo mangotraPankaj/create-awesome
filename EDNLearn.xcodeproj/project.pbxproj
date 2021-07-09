@@ -1,0 +1,853 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CD10FC89266C90AA00A84E66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD10FC88266C90AA00A84E66 /* AppDelegate.swift */; };
+		CD10FC8B266C90AA00A84E66 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD10FC8A266C90AA00A84E66 /* SceneDelegate.swift */; };
+		CD10FC8D266C90AA00A84E66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD10FC8C266C90AA00A84E66 /* ViewController.swift */; };
+		CD10FC90266C90AA00A84E66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD10FC8E266C90AA00A84E66 /* Main.storyboard */; };
+		CD10FC92266C90AF00A84E66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD10FC91266C90AF00A84E66 /* Assets.xcassets */; };
+		CD10FC95266C90AF00A84E66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD10FC93266C90AF00A84E66 /* LaunchScreen.storyboard */; };
+		CD10FCAB266C90CC00A84E66 /* EDNLearnMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD10FCA2266C90CB00A84E66 /* EDNLearnMac.framework */; };
+		CD10FCB0266C90CC00A84E66 /* EDNLearnMacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD10FCAF266C90CC00A84E66 /* EDNLearnMacTests.swift */; };
+		CD10FCB2266C90CC00A84E66 /* EDNLearnMac.h in Headers */ = {isa = PBXBuildFile; fileRef = CD10FCA4266C90CB00A84E66 /* EDNLearnMac.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD163F50266DF38000835B83 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD163F4F266DF38000835B83 /* FeedItem.swift */; };
+		CD163F51266DF38000835B83 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD163F4F266DF38000835B83 /* FeedItem.swift */; };
+		CD163F56266DF3BB00835B83 /* FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD163F55266DF3BB00835B83 /* FeedLoader.swift */; };
+		CD163F57266DF3BB00835B83 /* FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD163F55266DF3BB00835B83 /* FeedLoader.swift */; };
+		CD163F5C266DFD9E00835B83 /* LoadFeedFromRemoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD163F5B266DFD9E00835B83 /* LoadFeedFromRemoteUseCaseTests.swift */; };
+		CD163F67266F7B4000835B83 /* RemoteFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD163F66266F7B4000835B83 /* RemoteFeedLoader.swift */; };
+		CD163F68266F7B4000835B83 /* RemoteFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD163F66266F7B4000835B83 /* RemoteFeedLoader.swift */; };
+		CD1FF5EB267C92D4008FCA6B /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1FF5EA267C92D4008FCA6B /* URLSessionHTTPClientTests.swift */; };
+		CD1FF62126806A70008FCA6B /* XCTestCase+MemoryLeakTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1FF62026806A70008FCA6B /* XCTestCase+MemoryLeakTracker.swift */; };
+		CD4CC8F326787ADE0093103C /* FeedItemMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4CC8F226787ADE0093103C /* FeedItemMapper.swift */; };
+		CD4CC8F426787ADE0093103C /* FeedItemMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4CC8F226787ADE0093103C /* FeedItemMapper.swift */; };
+		CD6906D726845771001E9E4D /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6906D626845771001E9E4D /* URLSessionHTTPClient.swift */; };
+		CD6906D826845771001E9E4D /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6906D626845771001E9E4D /* URLSessionHTTPClient.swift */; };
+		CD6907272685AA9E001E9E4D /* EDNLearnAPIEndToEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6907262685AA9E001E9E4D /* EDNLearnAPIEndToEndTests.swift */; };
+		CD6907292685AA9E001E9E4D /* EDNLearnMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD10FCA2266C90CB00A84E66 /* EDNLearnMac.framework */; };
+		CD6907372687675A001E9E4D /* XCTestCase+MemoryLeakTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1FF62026806A70008FCA6B /* XCTestCase+MemoryLeakTracker.swift */; };
+		CDFEFDB8267876F0004BA307 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFEFDB7267876F0004BA307 /* HTTPClient.swift */; };
+		CDFEFDB9267876F0004BA307 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFEFDB7267876F0004BA307 /* HTTPClient.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CD10FCAC266C90CC00A84E66 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD10FC7D266C90A900A84E66 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD10FCA1266C90CB00A84E66;
+			remoteInfo = EDNLearnMac;
+		};
+		CD69072A2685AA9E001E9E4D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD10FC7D266C90A900A84E66 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD10FCA1266C90CB00A84E66;
+			remoteInfo = EDNLearnMac;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CD10FC85266C90AA00A84E66 /* EDNLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EDNLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD10FC88266C90AA00A84E66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CD10FC8A266C90AA00A84E66 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CD10FC8C266C90AA00A84E66 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CD10FC8F266C90AA00A84E66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CD10FC91266C90AF00A84E66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CD10FC94266C90AF00A84E66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CD10FC96266C90AF00A84E66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD10FCA2266C90CB00A84E66 /* EDNLearnMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EDNLearnMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD10FCA4266C90CB00A84E66 /* EDNLearnMac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDNLearnMac.h; sourceTree = "<group>"; };
+		CD10FCA5266C90CB00A84E66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD10FCAA266C90CC00A84E66 /* EDNLearnMacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EDNLearnMacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD10FCAF266C90CC00A84E66 /* EDNLearnMacTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDNLearnMacTests.swift; sourceTree = "<group>"; };
+		CD10FCB1266C90CC00A84E66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD163F4F266DF38000835B83 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
+		CD163F55266DF3BB00835B83 /* FeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoader.swift; sourceTree = "<group>"; };
+		CD163F5B266DFD9E00835B83 /* LoadFeedFromRemoteUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFeedFromRemoteUseCaseTests.swift; sourceTree = "<group>"; };
+		CD163F66266F7B4000835B83 /* RemoteFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedLoader.swift; sourceTree = "<group>"; };
+		CD1FF5EA267C92D4008FCA6B /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
+		CD1FF62026806A70008FCA6B /* XCTestCase+MemoryLeakTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracker.swift"; sourceTree = "<group>"; };
+		CD4CC8F226787ADE0093103C /* FeedItemMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemMapper.swift; sourceTree = "<group>"; };
+		CD6906D626845771001E9E4D /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
+		CD69071C2685A465001E9E4D /* EDNLearnMac.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = EDNLearnMac.xctestplan; sourceTree = "<group>"; };
+		CD6907242685AA9E001E9E4D /* EDNLearnAPIEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EDNLearnAPIEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD6907262685AA9E001E9E4D /* EDNLearnAPIEndToEndTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDNLearnAPIEndToEndTests.swift; sourceTree = "<group>"; };
+		CD6907282685AA9E001E9E4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDFEFDB7267876F0004BA307 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CD10FC82266C90AA00A84E66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD10FC9F266C90CB00A84E66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD10FCA7266C90CC00A84E66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD10FCAB266C90CC00A84E66 /* EDNLearnMac.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD6907212685AA9E001E9E4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD6907292685AA9E001E9E4D /* EDNLearnMac.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CD10FC7C266C90A900A84E66 = {
+			isa = PBXGroup;
+			children = (
+				CD10FC87266C90AA00A84E66 /* EDNLearn */,
+				CD10FCA3266C90CB00A84E66 /* EDNLearnMac */,
+				CD10FCAE266C90CC00A84E66 /* EDNLearnMacTests */,
+				CD6907252685AA9E001E9E4D /* EDNLearnAPIEndToEndTests */,
+				CD10FC86266C90AA00A84E66 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CD10FC86266C90AA00A84E66 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CD10FC85266C90AA00A84E66 /* EDNLearn.app */,
+				CD10FCA2266C90CB00A84E66 /* EDNLearnMac.framework */,
+				CD10FCAA266C90CC00A84E66 /* EDNLearnMacTests.xctest */,
+				CD6907242685AA9E001E9E4D /* EDNLearnAPIEndToEndTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CD10FC87266C90AA00A84E66 /* EDNLearn */ = {
+			isa = PBXGroup;
+			children = (
+				CD4CC90526788C540093103C /* Unused iOS code */,
+				CD163F65266F7AFD00835B83 /* Feed API */,
+				CD163F4E266DF37100835B83 /* Feed Feature */,
+				CD10FC96266C90AF00A84E66 /* Info.plist */,
+			);
+			path = EDNLearn;
+			sourceTree = "<group>";
+		};
+		CD10FCA3266C90CB00A84E66 /* EDNLearnMac */ = {
+			isa = PBXGroup;
+			children = (
+				CD10FCA4266C90CB00A84E66 /* EDNLearnMac.h */,
+				CD10FCA5266C90CB00A84E66 /* Info.plist */,
+			);
+			path = EDNLearnMac;
+			sourceTree = "<group>";
+		};
+		CD10FCAE266C90CC00A84E66 /* EDNLearnMacTests */ = {
+			isa = PBXGroup;
+			children = (
+				CD4CC90426788C040093103C /* Feed API */,
+				CD10FCAF266C90CC00A84E66 /* EDNLearnMacTests.swift */,
+				CD10FCB1266C90CC00A84E66 /* Info.plist */,
+			);
+			path = EDNLearnMacTests;
+			sourceTree = "<group>";
+		};
+		CD163F4E266DF37100835B83 /* Feed Feature */ = {
+			isa = PBXGroup;
+			children = (
+				CD163F4F266DF38000835B83 /* FeedItem.swift */,
+				CD163F55266DF3BB00835B83 /* FeedLoader.swift */,
+			);
+			path = "Feed Feature";
+			sourceTree = "<group>";
+		};
+		CD163F65266F7AFD00835B83 /* Feed API */ = {
+			isa = PBXGroup;
+			children = (
+				CD163F66266F7B4000835B83 /* RemoteFeedLoader.swift */,
+				CD4CC8F226787ADE0093103C /* FeedItemMapper.swift */,
+				CDFEFDB7267876F0004BA307 /* HTTPClient.swift */,
+				CD6906D626845771001E9E4D /* URLSessionHTTPClient.swift */,
+				CD69071C2685A465001E9E4D /* EDNLearnMac.xctestplan */,
+			);
+			path = "Feed API";
+			sourceTree = "<group>";
+		};
+		CD1FF61F26806A50008FCA6B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CD1FF62026806A70008FCA6B /* XCTestCase+MemoryLeakTracker.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CD4CC90426788C040093103C /* Feed API */ = {
+			isa = PBXGroup;
+			children = (
+				CD1FF61F26806A50008FCA6B /* Helpers */,
+				CD163F5B266DFD9E00835B83 /* LoadFeedFromRemoteUseCaseTests.swift */,
+				CD1FF5EA267C92D4008FCA6B /* URLSessionHTTPClientTests.swift */,
+			);
+			path = "Feed API";
+			sourceTree = "<group>";
+		};
+		CD4CC90526788C540093103C /* Unused iOS code */ = {
+			isa = PBXGroup;
+			children = (
+				CD10FC93266C90AF00A84E66 /* LaunchScreen.storyboard */,
+				CD10FC88266C90AA00A84E66 /* AppDelegate.swift */,
+				CD10FC8A266C90AA00A84E66 /* SceneDelegate.swift */,
+				CD10FC8C266C90AA00A84E66 /* ViewController.swift */,
+				CD10FC8E266C90AA00A84E66 /* Main.storyboard */,
+				CD10FC91266C90AF00A84E66 /* Assets.xcassets */,
+			);
+			path = "Unused iOS code";
+			sourceTree = "<group>";
+		};
+		CD6907252685AA9E001E9E4D /* EDNLearnAPIEndToEndTests */ = {
+			isa = PBXGroup;
+			children = (
+				CD6907262685AA9E001E9E4D /* EDNLearnAPIEndToEndTests.swift */,
+				CD6907282685AA9E001E9E4D /* Info.plist */,
+			);
+			path = EDNLearnAPIEndToEndTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		CD10FC9D266C90CB00A84E66 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD10FCB2266C90CC00A84E66 /* EDNLearnMac.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		CD10FC84266C90AA00A84E66 /* EDNLearn */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD10FC99266C90AF00A84E66 /* Build configuration list for PBXNativeTarget "EDNLearn" */;
+			buildPhases = (
+				CD10FC81266C90AA00A84E66 /* Sources */,
+				CD10FC82266C90AA00A84E66 /* Frameworks */,
+				CD10FC83266C90AA00A84E66 /* Resources */,
+				CD322333267342DB00A90502 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EDNLearn;
+			productName = EDNLearn;
+			productReference = CD10FC85266C90AA00A84E66 /* EDNLearn.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CD10FCA1266C90CB00A84E66 /* EDNLearnMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD10FCB3266C90CC00A84E66 /* Build configuration list for PBXNativeTarget "EDNLearnMac" */;
+			buildPhases = (
+				CD10FC9D266C90CB00A84E66 /* Headers */,
+				CD10FC9E266C90CB00A84E66 /* Sources */,
+				CD10FC9F266C90CB00A84E66 /* Frameworks */,
+				CD10FCA0266C90CB00A84E66 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EDNLearnMac;
+			productName = EDNLearnMac;
+			productReference = CD10FCA2266C90CB00A84E66 /* EDNLearnMac.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CD10FCA9266C90CC00A84E66 /* EDNLearnMacTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD10FCB6266C90CC00A84E66 /* Build configuration list for PBXNativeTarget "EDNLearnMacTests" */;
+			buildPhases = (
+				CD10FCA6266C90CC00A84E66 /* Sources */,
+				CD10FCA7266C90CC00A84E66 /* Frameworks */,
+				CD10FCA8266C90CC00A84E66 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD10FCAD266C90CC00A84E66 /* PBXTargetDependency */,
+			);
+			name = EDNLearnMacTests;
+			productName = EDNLearnMacTests;
+			productReference = CD10FCAA266C90CC00A84E66 /* EDNLearnMacTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CD6907232685AA9E001E9E4D /* EDNLearnAPIEndToEndTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD69072E2685AA9E001E9E4D /* Build configuration list for PBXNativeTarget "EDNLearnAPIEndToEndTests" */;
+			buildPhases = (
+				CD6907202685AA9E001E9E4D /* Sources */,
+				CD6907212685AA9E001E9E4D /* Frameworks */,
+				CD6907222685AA9E001E9E4D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD69072B2685AA9E001E9E4D /* PBXTargetDependency */,
+			);
+			name = EDNLearnAPIEndToEndTests;
+			productName = EDNLearnAPIEndToEndTests;
+			productReference = CD6907242685AA9E001E9E4D /* EDNLearnAPIEndToEndTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CD10FC7D266C90A900A84E66 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					CD10FC84266C90AA00A84E66 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					CD10FCA1266C90CB00A84E66 = {
+						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
+					};
+					CD10FCA9266C90CC00A84E66 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					CD6907232685AA9E001E9E4D = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = CD10FC80266C90A900A84E66 /* Build configuration list for PBXProject "EDNLearn" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CD10FC7C266C90A900A84E66;
+			productRefGroup = CD10FC86266C90AA00A84E66 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CD10FC84266C90AA00A84E66 /* EDNLearn */,
+				CD10FCA1266C90CB00A84E66 /* EDNLearnMac */,
+				CD10FCA9266C90CC00A84E66 /* EDNLearnMacTests */,
+				CD6907232685AA9E001E9E4D /* EDNLearnAPIEndToEndTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CD10FC83266C90AA00A84E66 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD10FC95266C90AF00A84E66 /* LaunchScreen.storyboard in Resources */,
+				CD10FC92266C90AF00A84E66 /* Assets.xcassets in Resources */,
+				CD10FC90266C90AA00A84E66 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD10FCA0266C90CB00A84E66 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD10FCA8266C90CC00A84E66 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD6907222685AA9E001E9E4D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CD322333267342DB00A90502 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CD10FC81266C90AA00A84E66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD163F50266DF38000835B83 /* FeedItem.swift in Sources */,
+				CD4CC8F326787ADE0093103C /* FeedItemMapper.swift in Sources */,
+				CD10FC8D266C90AA00A84E66 /* ViewController.swift in Sources */,
+				CD10FC89266C90AA00A84E66 /* AppDelegate.swift in Sources */,
+				CDFEFDB8267876F0004BA307 /* HTTPClient.swift in Sources */,
+				CD163F56266DF3BB00835B83 /* FeedLoader.swift in Sources */,
+				CD163F67266F7B4000835B83 /* RemoteFeedLoader.swift in Sources */,
+				CD10FC8B266C90AA00A84E66 /* SceneDelegate.swift in Sources */,
+				CD6906D726845771001E9E4D /* URLSessionHTTPClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD10FC9E266C90CB00A84E66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD163F57266DF3BB00835B83 /* FeedLoader.swift in Sources */,
+				CD4CC8F426787ADE0093103C /* FeedItemMapper.swift in Sources */,
+				CD163F68266F7B4000835B83 /* RemoteFeedLoader.swift in Sources */,
+				CDFEFDB9267876F0004BA307 /* HTTPClient.swift in Sources */,
+				CD163F51266DF38000835B83 /* FeedItem.swift in Sources */,
+				CD6906D826845771001E9E4D /* URLSessionHTTPClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD10FCA6266C90CC00A84E66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD163F5C266DFD9E00835B83 /* LoadFeedFromRemoteUseCaseTests.swift in Sources */,
+				CD1FF62126806A70008FCA6B /* XCTestCase+MemoryLeakTracker.swift in Sources */,
+				CD1FF5EB267C92D4008FCA6B /* URLSessionHTTPClientTests.swift in Sources */,
+				CD10FCB0266C90CC00A84E66 /* EDNLearnMacTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD6907202685AA9E001E9E4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD6907272685AA9E001E9E4D /* EDNLearnAPIEndToEndTests.swift in Sources */,
+				CD6907372687675A001E9E4D /* XCTestCase+MemoryLeakTracker.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CD10FCAD266C90CC00A84E66 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD10FCA1266C90CB00A84E66 /* EDNLearnMac */;
+			targetProxy = CD10FCAC266C90CC00A84E66 /* PBXContainerItemProxy */;
+		};
+		CD69072B2685AA9E001E9E4D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD10FCA1266C90CB00A84E66 /* EDNLearnMac */;
+			targetProxy = CD69072A2685AA9E001E9E4D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CD10FC8E266C90AA00A84E66 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD10FC8F266C90AA00A84E66 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CD10FC93266C90AF00A84E66 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD10FC94266C90AF00A84E66 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CD10FC97266C90AF00A84E66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CD10FC98266C90AF00A84E66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CD10FC9A266C90AF00A84E66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NT7V746EDB;
+				INFOPLIST_FILE = EDNLearn/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = pm.EDNLearn;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CD10FC9B266C90AF00A84E66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NT7V746EDB;
+				INFOPLIST_FILE = EDNLearn/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = pm.EDNLearn;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CD10FCB4266C90CC00A84E66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = NT7V746EDB;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = EDNLearnMac/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = pm.EDNLearnMac;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CD10FCB5266C90CC00A84E66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = NT7V746EDB;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = EDNLearnMac/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = pm.EDNLearnMac;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CD10FCB7266C90CC00A84E66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = NT7V746EDB;
+				INFOPLIST_FILE = EDNLearnMacTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = pm.EDNLearnMacTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		CD10FCB8266C90CC00A84E66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = NT7V746EDB;
+				INFOPLIST_FILE = EDNLearnMacTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = pm.EDNLearnMacTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		CD69072C2685AA9E001E9E4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = NT7V746EDB;
+				INFOPLIST_FILE = EDNLearnAPIEndToEndTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = pm.EDNLearnAPIEndToEndTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		CD69072D2685AA9E001E9E4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = NT7V746EDB;
+				INFOPLIST_FILE = EDNLearnAPIEndToEndTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = pm.EDNLearnAPIEndToEndTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CD10FC80266C90A900A84E66 /* Build configuration list for PBXProject "EDNLearn" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD10FC97266C90AF00A84E66 /* Debug */,
+				CD10FC98266C90AF00A84E66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD10FC99266C90AF00A84E66 /* Build configuration list for PBXNativeTarget "EDNLearn" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD10FC9A266C90AF00A84E66 /* Debug */,
+				CD10FC9B266C90AF00A84E66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD10FCB3266C90CC00A84E66 /* Build configuration list for PBXNativeTarget "EDNLearnMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD10FCB4266C90CC00A84E66 /* Debug */,
+				CD10FCB5266C90CC00A84E66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD10FCB6266C90CC00A84E66 /* Build configuration list for PBXNativeTarget "EDNLearnMacTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD10FCB7266C90CC00A84E66 /* Debug */,
+				CD10FCB8266C90CC00A84E66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD69072E2685AA9E001E9E4D /* Build configuration list for PBXNativeTarget "EDNLearnAPIEndToEndTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD69072C2685AA9E001E9E4D /* Debug */,
+				CD69072D2685AA9E001E9E4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CD10FC7D266C90A900A84E66 /* Project object */;
+}
