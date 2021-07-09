@@ -32,6 +32,7 @@
 		CD6907272685AA9E001E9E4D /* EDNLearnAPIEndToEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6907262685AA9E001E9E4D /* EDNLearnAPIEndToEndTests.swift */; };
 		CD6907292685AA9E001E9E4D /* EDNLearnMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD10FCA2266C90CB00A84E66 /* EDNLearnMac.framework */; };
 		CD6907372687675A001E9E4D /* XCTestCase+MemoryLeakTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1FF62026806A70008FCA6B /* XCTestCase+MemoryLeakTracker.swift */; };
+		CDF09E4C26982E5200F8E8D8 /* CacheFeedUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF09E4B26982E5200F8E8D8 /* CacheFeedUseCaseTests.swift */; };
 		CDFEFDB8267876F0004BA307 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFEFDB7267876F0004BA307 /* HTTPClient.swift */; };
 		CDFEFDB9267876F0004BA307 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFEFDB7267876F0004BA307 /* HTTPClient.swift */; };
 /* End PBXBuildFile section */
@@ -80,6 +81,7 @@
 		CD6907242685AA9E001E9E4D /* EDNLearnAPIEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EDNLearnAPIEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD6907262685AA9E001E9E4D /* EDNLearnAPIEndToEndTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDNLearnAPIEndToEndTests.swift; sourceTree = "<group>"; };
 		CD6907282685AA9E001E9E4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDF09E4B26982E5200F8E8D8 /* CacheFeedUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheFeedUseCaseTests.swift; sourceTree = "<group>"; };
 		CDFEFDB7267876F0004BA307 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,6 +164,7 @@
 		CD10FCAE266C90CC00A84E66 /* EDNLearnMacTests */ = {
 			isa = PBXGroup;
 			children = (
+				CDF09E4A26982E1D00F8E8D8 /* Feed Cache */,
 				CD4CC90426788C040093103C /* Feed API */,
 				CD10FCAF266C90CC00A84E66 /* EDNLearnMacTests.swift */,
 				CD10FCB1266C90CC00A84E66 /* Info.plist */,
@@ -228,6 +231,14 @@
 				CD6907282685AA9E001E9E4D /* Info.plist */,
 			);
 			path = EDNLearnAPIEndToEndTests;
+			sourceTree = "<group>";
+		};
+		CDF09E4A26982E1D00F8E8D8 /* Feed Cache */ = {
+			isa = PBXGroup;
+			children = (
+				CDF09E4B26982E5200F8E8D8 /* CacheFeedUseCaseTests.swift */,
+			);
+			path = "Feed Cache";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -452,6 +463,7 @@
 				CD163F5C266DFD9E00835B83 /* LoadFeedFromRemoteUseCaseTests.swift in Sources */,
 				CD1FF62126806A70008FCA6B /* XCTestCase+MemoryLeakTracker.swift in Sources */,
 				CD1FF5EB267C92D4008FCA6B /* URLSessionHTTPClientTests.swift in Sources */,
+				CDF09E4C26982E5200F8E8D8 /* CacheFeedUseCaseTests.swift in Sources */,
 				CD10FCB0266C90CC00A84E66 /* EDNLearnMacTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

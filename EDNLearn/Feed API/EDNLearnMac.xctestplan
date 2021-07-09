@@ -20,7 +20,9 @@
     {
       "parallelizable" : true,
       "skippedTests" : [
-        "EDNLearnMacTests"
+        "EDNLearnMacTests",
+        "LoadFeedFromRemoteUseCaseTests",
+        "URLSessionHTTPClientTests"
       ],
       "target" : {
         "containerPath" : "container:EDNLearn.xcodeproj",
