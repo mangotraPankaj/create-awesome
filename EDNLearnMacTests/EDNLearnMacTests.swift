@@ -5,9 +5,7 @@
 //  Created by Pankaj Mangotra on 06/06/21.
 //
 
-import XCTest
 @testable import EDNLearnMac
+import XCTest
 
-class EDNLearnMacTests: XCTestCase {
-
-}
+class EDNLearnMacTests: XCTestCase {}
