@@ -11,22 +11,22 @@ import XCTest
 class EDNLearnAPIEndToEndTests: XCTestCase {
     func test_endToEndTestServerGETFeedResult_matchesFixedTestAccountData() {
         switch getFeedResult() {
-        case let .success(items):
-            XCTAssertEqual(items.count, 8, "Expected 8 items in the test account feed")
-            
+        case let .success(imageFeed):
+            XCTAssertEqual(imageFeed.count, 8, "Expected 8 images in the test account imagefeed")
+
             // We can enumerate this way using for loop or calling assertion directly like below
             /* items.enumerated().forEach { index, item in
                  XCTAssertEqual(item, expectedItem(at: index),"unexpected items value at \(index)")
              } */
-            XCTAssertEqual(items[0], expectedItem(at: 0))
-            XCTAssertEqual(items[1], expectedItem(at: 1))
-            XCTAssertEqual(items[2], expectedItem(at: 2))
-            XCTAssertEqual(items[3], expectedItem(at: 3))
-            XCTAssertEqual(items[4], expectedItem(at: 4))
-            XCTAssertEqual(items[5], expectedItem(at: 5))
-            XCTAssertEqual(items[6], expectedItem(at: 6))
-            XCTAssertEqual(items[7], expectedItem(at: 7))
-            
+            XCTAssertEqual(imageFeed[0], expectedImage(at: 0))
+            XCTAssertEqual(imageFeed[1], expectedImage(at: 1))
+            XCTAssertEqual(imageFeed[2], expectedImage(at: 2))
+            XCTAssertEqual(imageFeed[3], expectedImage(at: 3))
+            XCTAssertEqual(imageFeed[4], expectedImage(at: 4))
+            XCTAssertEqual(imageFeed[5], expectedImage(at: 5))
+            XCTAssertEqual(imageFeed[6], expectedImage(at: 6))
+            XCTAssertEqual(imageFeed[7], expectedImage(at: 7))
+
         case let .failure(error):
             XCTFail("Expected successful feed results, Got \(error) insted")
         default:
@@ -44,7 +44,7 @@ class EDNLearnAPIEndToEndTests: XCTestCase {
         let loader = RemoteFeedLoader(url: testServerURL, client: client)
         trackForMemoryLeaks(client, file: file, line: line)
         trackForMemoryLeaks(loader, file: file, line: line)
-    
+
         let exp = expectation(description: "Wait for the load to complete")
         var recievedResult: LoadFeedResult?
         loader.load { result in
@@ -55,13 +55,13 @@ class EDNLearnAPIEndToEndTests: XCTestCase {
         return recievedResult
     }
 
-    private func expectedItem(at index: Int) -> FeedItem {
-        return FeedItem(id: id(at: index),
-                        description: description(at: index),
-                        location: location(at: index),
-                        imageURL: imageURL(at: index))
+    private func expectedImage(at index: Int) -> FeedImage {
+        return FeedImage(id: id(at: index),
+                         description: description(at: index),
+                         location: location(at: index),
+                         url: imageURL(at: index))
     }
-    
+
     private func id(at index: Int) -> UUID {
         return UUID(uuidString: [
             "73A7F70C-75DA-4C2E-B5A3-EED40DC53AA6",
@@ -87,7 +87,7 @@ class EDNLearnAPIEndToEndTests: XCTestCase {
             "Description 8"
         ][index]
     }
-    
+
     private func location(at index: Int) -> String? {
         return [
             "Location 1",
@@ -100,7 +100,7 @@ class EDNLearnAPIEndToEndTests: XCTestCase {
             "Location 8"
         ][index]
     }
-    
+
     private func imageURL(at index: Int) -> URL {
         return URL(string: "https://url-\(index + 1).com")!
     }
