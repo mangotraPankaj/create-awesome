@@ -51,12 +51,16 @@ internal class FeedStoreSpy: FeedStore {
         insertionCompletions[index](nil)
     }
 
+    func retrieve(completion: @escaping RetrievalCompletion) {
+        retrievalCompletions.append(completion)
+        receivedMessages.append(.retrieve)
+    }
+
     func completeRetrieval(with error: Error, at index: Int = 0) {
         retrievalCompletions[index](error)
     }
 
-    func retrieve(completion: @escaping RetrievalCompletion) {
-        retrievalCompletions.append(completion)
-        receivedMessages.append(.retrieve)
+    func completeRetrievalwithEmptyCache(at index: Int = 0) {
+        retrievalCompletions[index](nil)
     }
 }
