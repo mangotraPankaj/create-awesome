@@ -41,7 +41,6 @@ public final class LocalFeedLoader {
                 completion(.success(feed.toModels()))
 
             case .found:
-                self.store.deleteCacheFeed { _ in }
                 completion(.success([]))
                 // fallthrough - Can also use fallthrough to avoid duplication of the success completion block in this and below case
 
@@ -55,6 +54,8 @@ public final class LocalFeedLoader {
         store.retrieve { [unowned self] result in
             switch result {
             case .failure:
+                self.store.deleteCacheFeed { _ in }
+            case let .found(_, timestamp) where !self.validate(timestamp):
                 self.store.deleteCacheFeed { _ in }
             default: break
             }
