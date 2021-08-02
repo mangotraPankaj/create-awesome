@@ -78,6 +78,23 @@
                BlueprintName = "EDNLearnMacTests"
                ReferencedContainer = "container:EDNLearn.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "CacheFeedUseCaseTests">
+               </Test>
+               <Test
+                  Identifier = "EDNLearnMacTests">
+               </Test>
+               <Test
+                  Identifier = "LoadFeedFromCacheUseCaseTests">
+               </Test>
+               <Test
+                  Identifier = "LoadFeedFromRemoteUseCaseTests">
+               </Test>
+               <Test
+                  Identifier = "URLSessionHTTPClientTests">
+               </Test>
+            </SkippedTests>
             <LocationScenarioReference
                identifier = "com.apple.dt.IDEFoundation.CurrentLocationScenarioIdentifier"
                referenceType = "1">
