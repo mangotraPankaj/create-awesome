@@ -86,9 +86,6 @@
                   Identifier = "EDNLearnMacTests">
                </Test>
                <Test
-                  Identifier = "LoadFeedFromCacheUseCaseTests">
-               </Test>
-               <Test
                   Identifier = "LoadFeedFromRemoteUseCaseTests">
                </Test>
                <Test
