@@ -99,10 +99,6 @@ class URLSessionHTTPClientTests: XCTestCase {
         return sut
     }
 
-    private func anyURL() -> URL {
-        return URL(string: "http://any-url.com")!
-    }
-
     private func resultErrorFor(data: Data?, response: URLResponse?, error: Error?, file: StaticString = #filePath,
                                 line: UInt = #line) -> Error?
     {
