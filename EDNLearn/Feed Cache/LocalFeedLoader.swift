@@ -40,12 +40,9 @@ public final class LocalFeedLoader {
             case let .found(feed, timestamp) where self.validate(timestamp):
                 completion(.success(feed.toModels()))
 
-            case .found:
+            case .found, .empty:
                 completion(.success([]))
                 // fallthrough - Can also use fallthrough to avoid duplication of the success completion block in this and below case
-
-            case .empty:
-                completion(.success([]))
             }
         }
     }
