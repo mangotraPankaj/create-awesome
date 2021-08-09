@@ -80,13 +80,7 @@
             </BuildableReference>
             <SkippedTests>
                <Test
-                  Identifier = "CacheFeedUseCaseTests">
-               </Test>
-               <Test
                   Identifier = "EDNLearnMacTests">
-               </Test>
-               <Test
-                  Identifier = "LoadFeedFromRemoteUseCaseTests">
                </Test>
                <Test
                   Identifier = "URLSessionHTTPClientTests">
