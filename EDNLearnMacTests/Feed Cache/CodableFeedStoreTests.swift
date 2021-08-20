@@ -8,42 +8,9 @@
 import EDNLearnMac
 import XCTest
 
-protocol FeedStoreSpecs {
-    func test_retrieve_deliversEmptyOnEmptyCache()
-    func test_retrieve_hasNoSideEffectsEmptyCache()
-    func test_retrieve_deliversFoundValuesOnNonEmptyCache()
-    func test_retrieve_hasNoSideEffectsOnNonEmptyCache()
-    func test_retrieve_deliversFailureOnRetrievalError()
-    func test_retrieve_hasNoSideEffectsOnFailure()
+typealias FailableFeedStore = FailableInsertFeedStoreSpecs & FailableRetrieveFeedStoreSpecs & FailableDeleteFeedStoreSpecs
 
-    func test_insert_overridesPreviouslyInsertedCacheValues()
-    func test_insert_deliversNoErrorOnEmptyCache()
-    func test_insert_hasNoSideEffectsOnInsertionError()
-
-    func test_delete_deliversNoErrorOnEmptyCache()
-    func test_delete_hasNoSideEffectsOnEmptyCache()
-    func test_delete_emptiesPreviouslyInsertedCache()
-    func test_delete_deliversNoErrorOnNonEmptyCache()
-
-    func test_storeSideEffects_runSerially()
-}
-
-protocol FailableRetrieveFeedStoreSpecs {
-    func test_retrieve_deliversFailureOnRetrievalError()
-    func test_retrieve_hasNoSideEffectsOnFailure()
-}
-
-protocol FailableInsertFeedStoreSpecs {
-    func test_insert_deliversErrorOnInsertionError()
-    func test_insert_hasNoSideEffectsOnInsertionError()
-}
-
-protocol FailableDeleteFeedStoreSpecs {
-    func test_delete_deliversErrorOnDeletionError()
-    func test_delete_hasNoSideEffectsOnDeletionError()
-}
-
-class CodableFeedStoreTests: XCTestCase {
+class CodableFeedStoreTests: XCTestCase, FailableFeedStore {
     /// Teardown and setup methods are written so that the residual artifacts which are written while inserting gets cleaned up otherwise test_retrieve_deliversEmptyOnEmptyCache fails since there would be data present in the cache.
 
     /// Teardown method is not called if the execution stops midway while test is being run. For e.g. - If you put a breakpoint at line 31 and when breakpoint hits and execution is stopped, insertion would have happened but teardown would not be called.
