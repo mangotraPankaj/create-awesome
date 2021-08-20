@@ -9,6 +9,40 @@ import EDNLearnMac
 import XCTest
 
 extension FeedStoreSpecs where Self: XCTestCase {
+    func assertThatRetrieveDelieversEmptyOnEmptyCache(on sut: FeedStore, file: StaticString = #file, line: UInt = #line) {
+        expect(sut, toRetrieve: .empty, file: file, line: line)
+    }
+
+    func assertThatRetrieveHasNoSideEffectsOnEmptyCache(on sut: FeedStore, file: StaticString = #file, line: UInt = #line) {
+        expect(sut, toRetrieveTwice: .empty, file: file, line: line)
+    }
+
+    func assertThatRetrieveDeliversFoundValuesOnNonEmptyCache(on sut: FeedStore, file: StaticString = #file, line: UInt = #line) {
+        let feed = uniqueImageFeed().local
+        let timestamp = Date()
+
+        insert((feed, timestamp), to: sut)
+
+        expect(sut, toRetrieve: .found(feed: feed, timestamp: timestamp), file: file, line: line)
+    }
+
+    func assertThatRetrieveHasNoSideEffectsOnNonEmptyCache(on sut: FeedStore, file: StaticString = #file, line: UInt = #line) {
+        let feed = uniqueImageFeed().local
+        let timestamp = Date()
+
+        insert((feed, timestamp), to: sut)
+
+        expect(sut, toRetrieveTwice: .found(feed: feed, timestamp: timestamp), file: file, line: line)
+    }
+
+    func assertThatRetrieveDeliversFailureOnRetrievalError(on sut: FeedStore, file _: StaticString = #file, line _: UInt = #line) {
+        expect(sut, toRetrieve: .failure(anyError()))
+    }
+
+    func assertThatRetrieveHasNoSideEffectsOnFailure(on sut: FeedStore, file _: StaticString = #file, line _: UInt = #line) {
+        expect(sut, toRetrieveTwice: .failure(anyError()))
+    }
+
     @discardableResult
     func insert(_ cache: (feed: [LocalFeedImage], timestamp: Date), to sut: FeedStore) -> Error? {
         let exp = expectation(description: "Wait for cache insertion")
