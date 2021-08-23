@@ -9,14 +9,9 @@ import EDNLearnMac
 import XCTest
 
 class CoreDataFeedStore: FeedStore {
-    func deleteCacheFeed(completion: @escaping DeletionCompletion) {
-        <#code#>
-    }
-    
-    func insert(_ feed: [LocalFeedImage], timestamp: Date, completion: @escaping InsertionCompletion) {
-        <#code#>
-    }
-    
+    func deleteCacheFeed(completion _: @escaping DeletionCompletion) {}
+
+    func insert(_: [LocalFeedImage], timestamp _: Date, completion _: @escaping InsertionCompletion) {}
 
     func retrieve(completion: @escaping RetrievalCompletion) { completion(.empty) }
 }
@@ -27,7 +22,10 @@ class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
         assertThatRetrieveDelieversEmptyOnEmptyCache(on: sut)
     }
 
-    func test_retrieve_hasNoSideEffectsEmptyCache() {}
+    func test_retrieve_hasNoSideEffectsEmptyCache() {
+        let sut = makeSUT()
+        assertThatRetrieveHasNoSideEffectsOnEmptyCache(on: sut)
+    }
 
     func test_retrieve_deliversFoundValuesOnNonEmptyCache() {}
 
