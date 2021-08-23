@@ -57,6 +57,31 @@ extension FeedStoreSpecs where Self: XCTestCase {
         XCTAssertNil(insertionError, "Expected to override cache successfully", file: file, line: line)
     }
 
+    func assertThatDeleteDeliversNoErrorOnEmptyCache(on sut: FeedStore, file: StaticString = #file, line: UInt = #line) {
+        let deletionError = deleteCache(from: sut)
+        XCTAssertNil(deletionError, "Expected empty cache deletion to succeed", file: file, line: line)
+    }
+
+    func assertThatDeleteHasNoSideEffectsOnEmptyCache(on sut: FeedStore, file: StaticString = #file, line: UInt = #line) {
+        deleteCache(from: sut)
+
+        expect(sut, toRetrieve: .empty, file: file, line: line)
+    }
+
+    func assertThatDeleteEmptiesPreviouslyInsertedCache(on sut: FeedStore, file: StaticString = #file, line: UInt = #line) {
+        insert((uniqueImageFeed().local, Date()), to: sut)
+
+        deleteCache(from: sut)
+        expect(sut, toRetrieve: .empty, file: file, line: line)
+    }
+
+    func assertThatDeleteDeliversNoErrorOnNonEmptyCache(on sut: FeedStore, file: StaticString = #file, line: UInt = #line) {
+        insert((uniqueImageFeed().local, Date()), to: sut)
+
+        let deletionError = deleteCache(from: sut)
+        XCTAssertNil(deletionError, "Expected non-empty cache deletion to suceed", file: file, line: line)
+    }
+
     @discardableResult
     func insert(_ cache: (feed: [LocalFeedImage], timestamp: Date), to sut: FeedStore) -> Error? {
         let exp = expectation(description: "Wait for cache insertion")
