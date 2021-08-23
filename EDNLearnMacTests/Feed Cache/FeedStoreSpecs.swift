@@ -12,12 +12,10 @@ protocol FeedStoreSpecs {
     func test_retrieve_hasNoSideEffectsEmptyCache()
     func test_retrieve_deliversFoundValuesOnNonEmptyCache()
     func test_retrieve_hasNoSideEffectsOnNonEmptyCache()
-    func test_retrieve_deliversFailureOnRetrievalError()
-    func test_retrieve_hasNoSideEffectsOnFailure()
 
     func test_insert_overridesPreviouslyInsertedCacheValues()
     func test_insert_deliversNoErrorOnEmptyCache()
-    func test_insert_hasNoSideEffectsOnInsertionError()
+    func test_insert_deliversNoErrorOnNonEmptyCache()
 
     func test_delete_deliversNoErrorOnEmptyCache()
     func test_delete_hasNoSideEffectsOnEmptyCache()
