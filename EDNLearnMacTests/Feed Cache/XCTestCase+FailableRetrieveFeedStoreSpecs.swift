@@ -10,11 +10,11 @@ import Foundation
 import XCTest
 
 extension FailableRetrieveFeedStoreSpecs where Self: XCTestCase {
-    func assertThatRetrieveDeliversFailureOnRetrievalError(on sut: FeedStore, file _: StaticString = #file, line _: UInt = #line) {
-        expect(sut, toRetrieve: .failure(anyError()))
+    func assertThatRetrieveDeliversFailureOnRetrievalError(on sut: FeedStore, file: StaticString = #file, line: UInt = #line) {
+        expect(sut, toRetrieve: .failure(anyError()), file: file, line: line)
     }
 
-    func assertThatRetrieveHasNoSideEffectsOnFailure(on sut: FeedStore, file _: StaticString = #file, line _: UInt = #line) {
-        expect(sut, toRetrieveTwice: .failure(anyError()))
+    func assertThatRetrieveHasNoSideEffectsOnFailure(on sut: FeedStore, file: StaticString = #file, line: UInt = #line) {
+        expect(sut, toRetrieveTwice: .failure(anyError()), file: file, line: line)
     }
 }
