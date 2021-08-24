@@ -19,7 +19,10 @@ class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
         assertThatRetrieveHasNoSideEffectsOnEmptyCache(on: sut)
     }
 
-    func test_retrieve_deliversFoundValuesOnNonEmptyCache() {}
+    func test_retrieve_deliversFoundValuesOnNonEmptyCache() {
+        let sut = makeSUT()
+        assertThatRetrieveDeliversFoundValuesOnNonEmptyCache(on: sut)
+    }
 
     func test_retrieve_hasNoSideEffectsOnNonEmptyCache() {}
 
@@ -41,10 +44,10 @@ class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
 
     // MARK: Helpers
 
-    ///Make StoreURL an explicit dependency so we can inject test-specific URLs(such as '/dev/null' to avoid sharing state with production (and other tests)
-    ///'/dev/null' discards all data written to it, but reports that the writes are successful. The writes are ignored but core data still works with in-memory object graph.
-    ///This would help us to avoid side-effects which may occur due to artefacts which may remain from tests , since dev/null does not write to sqlite
-    
+    /// Make StoreURL an explicit dependency so we can inject test-specific URLs(such as '/dev/null' to avoid sharing state with production (and other tests)
+    /// '/dev/null' discards all data written to it, but reports that the writes are successful. The writes are ignored but core data still works with in-memory object graph.
+    /// This would help us to avoid side-effects which may occur due to artefacts which may remain from tests , since dev/null does not write to sqlite
+
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> FeedStore {
         let storeBundle = Bundle(for: CoreDataFeedStore.self)
         let storeURL = URL(fileURLWithPath: "/dev/null")
