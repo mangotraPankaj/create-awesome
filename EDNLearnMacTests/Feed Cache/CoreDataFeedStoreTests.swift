@@ -41,9 +41,14 @@ class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
 
     // MARK: Helpers
 
+    ///Make StoreURL an explicit dependency so we can inject test-specific URLs(such as '/dev/null' to avoid sharing state with production (and other tests)
+    ///'/dev/null' discards all data written to it, but reports that the writes are successful. The writes are ignored but core data still works with in-memory object graph.
+    ///This would help us to avoid side-effects which may occur due to artefacts which may remain from tests , since dev/null does not write to sqlite
+    
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> FeedStore {
         let storeBundle = Bundle(for: CoreDataFeedStore.self)
-        let sut = try! CoreDataFeedStore(bundle: storeBundle)
+        let storeURL = URL(fileURLWithPath: "/dev/null")
+        let sut = try! CoreDataFeedStore(storeURL: storeURL, bundle: storeBundle)
         trackForMemoryLeaks(sut, file: file, line: line)
         return sut
     }
