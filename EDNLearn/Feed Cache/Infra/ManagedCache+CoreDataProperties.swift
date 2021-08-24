@@ -6,52 +6,48 @@
 //
 //
 
-import Foundation
 import CoreData
+import Foundation
 
-
-extension ManagedCache {
-
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<ManagedCache> {
+public extension ManagedCache {
+    @nonobjc class func fetchRequest() -> NSFetchRequest<ManagedCache> {
         return NSFetchRequest<ManagedCache>(entityName: "ManagedCache")
     }
 
-    @NSManaged public var timestamp: Date?
-    @NSManaged public var feed: NSOrderedSet?
-
+    @NSManaged var timestamp: Date?
+    @NSManaged var feed: NSOrderedSet?
 }
 
 // MARK: Generated accessors for feed
-extension ManagedCache {
 
+public extension ManagedCache {
     @objc(insertObject:inFeedAtIndex:)
-    @NSManaged public func insertIntoFeed(_ value: ManagedFeedImage, at idx: Int)
+    @NSManaged func insertIntoFeed(_ value: ManagedFeedImage, at idx: Int)
 
     @objc(removeObjectFromFeedAtIndex:)
-    @NSManaged public func removeFromFeed(at idx: Int)
+    @NSManaged func removeFromFeed(at idx: Int)
 
     @objc(insertFeed:atIndexes:)
-    @NSManaged public func insertIntoFeed(_ values: [ManagedFeedImage], at indexes: NSIndexSet)
+    @NSManaged func insertIntoFeed(_ values: [ManagedFeedImage], at indexes: NSIndexSet)
 
     @objc(removeFeedAtIndexes:)
-    @NSManaged public func removeFromFeed(at indexes: NSIndexSet)
+    @NSManaged func removeFromFeed(at indexes: NSIndexSet)
 
     @objc(replaceObjectInFeedAtIndex:withObject:)
-    @NSManaged public func replaceFeed(at idx: Int, with value: ManagedFeedImage)
+    @NSManaged func replaceFeed(at idx: Int, with value: ManagedFeedImage)
 
     @objc(replaceFeedAtIndexes:withFeed:)
-    @NSManaged public func replaceFeed(at indexes: NSIndexSet, with values: [ManagedFeedImage])
+    @NSManaged func replaceFeed(at indexes: NSIndexSet, with values: [ManagedFeedImage])
 
     @objc(addFeedObject:)
-    @NSManaged public func addToFeed(_ value: ManagedFeedImage)
+    @NSManaged func addToFeed(_ value: ManagedFeedImage)
 
     @objc(removeFeedObject:)
-    @NSManaged public func removeFromFeed(_ value: ManagedFeedImage)
+    @NSManaged func removeFromFeed(_ value: ManagedFeedImage)
 
     @objc(addFeed:)
-    @NSManaged public func addToFeed(_ values: NSOrderedSet)
+    @NSManaged func addToFeed(_ values: NSOrderedSet)
 
     @objc(removeFeed:)
-    @NSManaged public func removeFromFeed(_ values: NSOrderedSet)
-
+    @NSManaged func removeFromFeed(_ values: NSOrderedSet)
 }

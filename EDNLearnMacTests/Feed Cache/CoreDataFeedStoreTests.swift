@@ -8,14 +8,6 @@
 import EDNLearnMac
 import XCTest
 
-class CoreDataFeedStore: FeedStore {
-    func deleteCacheFeed(completion _: @escaping DeletionCompletion) {}
-
-    func insert(_: [LocalFeedImage], timestamp _: Date, completion _: @escaping InsertionCompletion) {}
-
-    func retrieve(completion: @escaping RetrievalCompletion) { completion(.empty) }
-}
-
 class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
     func test_retrieve_deliversEmptyOnEmptyCache() {
         let sut = makeSUT()

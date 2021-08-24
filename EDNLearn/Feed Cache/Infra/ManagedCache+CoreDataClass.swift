@@ -6,10 +6,8 @@
 //
 //
 
-import Foundation
 import CoreData
+import Foundation
 
 @objc(ManagedCache)
-public class ManagedCache: NSManagedObject {
-
-}
+public class ManagedCache: NSManagedObject {}

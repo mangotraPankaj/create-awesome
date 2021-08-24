@@ -6,10 +6,8 @@
 //
 //
 
-import Foundation
 import CoreData
+import Foundation
 
 @objc(ManagedFeedImage)
-public class ManagedFeedImage: NSManagedObject {
-
-}
+public class ManagedFeedImage: NSManagedObject {}
