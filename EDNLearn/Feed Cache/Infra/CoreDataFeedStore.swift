@@ -18,7 +18,16 @@ public class CoreDataFeedStore: FeedStore {
     }
 
     public func deleteCacheFeed(completion: @escaping DeletionCompletion) {
-        completion(nil)
+        let context = self.context
+
+        context.perform {
+            do {
+                try ManagedCache.find(in: context).map(context.delete).map(context.save)
+                completion(nil)
+            } catch {
+                completion(error)
+            }
+        }
     }
 
     public func insert(_ feed: [LocalFeedImage], timestamp: Date, completion: @escaping InsertionCompletion) {
@@ -56,9 +65,9 @@ public class CoreDataFeedStore: FeedStore {
 }
 
 @objc(ManagedCache)
-private class ManagedCache: NSManagedObject {
-    @NSManaged var timestamp: Date
-    @NSManaged var feed: NSOrderedSet
+internal class ManagedCache: NSManagedObject {
+    @NSManaged internal var timestamp: Date
+    @NSManaged internal var feed: NSOrderedSet
 
     var localFeed: [LocalFeedImage] {
         return feed.compactMap { ($0 as? ManagedFeedImage)?.local }
@@ -77,12 +86,12 @@ private class ManagedCache: NSManagedObject {
 }
 
 @objc(ManagedFeedImage)
-private class ManagedFeedImage: NSManagedObject {
-    @NSManaged var id: UUID
-    @NSManaged var imageDescription: String?
-    @NSManaged var location: String?
-    @NSManaged var url: URL
-    @NSManaged var cache: ManagedCache
+internal class ManagedFeedImage: NSManagedObject {
+    @NSManaged internal var id: UUID
+    @NSManaged internal var imageDescription: String?
+    @NSManaged internal var location: String?
+    @NSManaged internal var url: URL
+    @NSManaged internal var cache: ManagedCache
 
     static func images(from localFeed: [LocalFeedImage], in context: NSManagedObjectContext) -> NSOrderedSet {
         return NSOrderedSet(array: localFeed.map { local in

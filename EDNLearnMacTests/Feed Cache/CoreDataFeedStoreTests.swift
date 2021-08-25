@@ -39,10 +39,9 @@ class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
         assertThatInsertDeliversNoErrorOnEmptyCache(on: sut)
     }
 
-    #warning("commented test_insert_deliversNoErrorOnNonEmptyCache as it is failing. Waiting for reply from Caio")
     func test_insert_deliversNoErrorOnNonEmptyCache() {
-//        let sut = makeSUT()
-//        assertThatInsertDeliversNoErrorOnNonEmptyCache(on: sut)
+        let sut = makeSUT()
+        assertThatInsertDeliversNoErrorOnNonEmptyCache(on: sut)
     }
 
     func test_delete_deliversNoErrorOnEmptyCache() {
@@ -56,8 +55,8 @@ class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
     }
 
     func test_delete_emptiesPreviouslyInsertedCache() {
-//        let sut = makeSUT()
-//        assertThatDeleteEmptiesPreviouslyInsertedCache(on: sut)
+        let sut = makeSUT()
+        assertThatDeleteEmptiesPreviouslyInsertedCache(on: sut)
     }
 
     func test_delete_deliversNoErrorOnNonEmptyCache() {
