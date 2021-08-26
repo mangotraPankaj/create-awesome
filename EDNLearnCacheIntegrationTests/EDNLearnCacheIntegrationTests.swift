@@ -9,6 +9,16 @@ import EDNLearnMac
 import XCTest
 
 class EDNLearnCacheIntegrationTests: XCTestCase {
+    override func tearDown() {
+        super.tearDown()
+        undoStoreSideEffects()
+    }
+
+    override func setUp() {
+        super.setUp()
+        setupEmptyStoreState()
+    }
+
     func test_load_deliversNoItemsOnEmptyCache() {
         let sut = makeSUT()
 
@@ -43,5 +53,17 @@ class EDNLearnCacheIntegrationTests: XCTestCase {
 
     private func CachesDirectory() -> URL {
         return FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
+    }
+
+    private func undoStoreSideEffects() {
+        deleteStoreArtifacts()
+    }
+
+    private func setupEmptyStoreState() {
+        deleteStoreArtifacts()
+    }
+
+    private func deleteStoreArtifacts() {
+        try? FileManager.default.removeItem(at: testSpecificStoreURL())
     }
 }
