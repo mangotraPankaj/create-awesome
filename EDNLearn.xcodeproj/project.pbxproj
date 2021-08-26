@@ -19,6 +19,7 @@
 		CD0FCF3626D6218F00398364 /* ManagedFeedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0FCF3426D6218F00398364 /* ManagedFeedImage.swift */; };
 		CD0FCF3E26D7787000398364 /* EDNLearnCacheIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0FCF3D26D7787000398364 /* EDNLearnCacheIntegrationTests.swift */; };
 		CD0FCF4026D7787000398364 /* EDNLearnMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD10FCA2266C90CB00A84E66 /* EDNLearnMac.framework */; };
+		CD0FCF4626D779FE00398364 /* XCTestCase+MemoryLeakTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1FF62026806A70008FCA6B /* XCTestCase+MemoryLeakTracker.swift */; };
 		CD10FC89266C90AA00A84E66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD10FC88266C90AA00A84E66 /* AppDelegate.swift */; };
 		CD10FC8B266C90AA00A84E66 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD10FC8A266C90AA00A84E66 /* SceneDelegate.swift */; };
 		CD10FC8D266C90AA00A84E66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD10FC8C266C90AA00A84E66 /* ViewController.swift */; };
@@ -612,6 +613,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD0FCF3E26D7787000398364 /* EDNLearnCacheIntegrationTests.swift in Sources */,
+				CD0FCF4626D779FE00398364 /* XCTestCase+MemoryLeakTracker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
