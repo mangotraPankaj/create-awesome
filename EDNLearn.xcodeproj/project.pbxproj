@@ -17,6 +17,8 @@
 		CD0FCF3326D6214C00398364 /* ManagedCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0FCF3126D6214C00398364 /* ManagedCache.swift */; };
 		CD0FCF3526D6218F00398364 /* ManagedFeedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0FCF3426D6218F00398364 /* ManagedFeedImage.swift */; };
 		CD0FCF3626D6218F00398364 /* ManagedFeedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0FCF3426D6218F00398364 /* ManagedFeedImage.swift */; };
+		CD0FCF3E26D7787000398364 /* EDNLearnCacheIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0FCF3D26D7787000398364 /* EDNLearnCacheIntegrationTests.swift */; };
+		CD0FCF4026D7787000398364 /* EDNLearnMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD10FCA2266C90CB00A84E66 /* EDNLearnMac.framework */; };
 		CD10FC89266C90AA00A84E66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD10FC88266C90AA00A84E66 /* AppDelegate.swift */; };
 		CD10FC8B266C90AA00A84E66 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD10FC8A266C90AA00A84E66 /* SceneDelegate.swift */; };
 		CD10FC8D266C90AA00A84E66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD10FC8C266C90AA00A84E66 /* ViewController.swift */; };
@@ -72,6 +74,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		CD0FCF4126D7787000398364 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD10FC7D266C90A900A84E66 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD10FCA1266C90CB00A84E66;
+			remoteInfo = EDNLearnMac;
+		};
 		CD10FCAC266C90CC00A84E66 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CD10FC7D266C90A900A84E66 /* Project object */;
@@ -94,6 +103,9 @@
 		CD0FCF2E26D6208800398364 /* CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelpers.swift; sourceTree = "<group>"; };
 		CD0FCF3126D6214C00398364 /* ManagedCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedCache.swift; sourceTree = "<group>"; };
 		CD0FCF3426D6218F00398364 /* ManagedFeedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedFeedImage.swift; sourceTree = "<group>"; };
+		CD0FCF3B26D7787000398364 /* EDNLearnCacheIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EDNLearnCacheIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD0FCF3D26D7787000398364 /* EDNLearnCacheIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDNLearnCacheIntegrationTests.swift; sourceTree = "<group>"; };
+		CD0FCF3F26D7787000398364 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD10FC85266C90AA00A84E66 /* EDNLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EDNLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD10FC88266C90AA00A84E66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD10FC8A266C90AA00A84E66 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -142,6 +154,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CD0FCF3826D7787000398364 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD0FCF4026D7787000398364 /* EDNLearnMac.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CD10FC82266C90AA00A84E66 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -188,6 +208,15 @@
 			path = Infra;
 			sourceTree = "<group>";
 		};
+		CD0FCF3C26D7787000398364 /* EDNLearnCacheIntegrationTests */ = {
+			isa = PBXGroup;
+			children = (
+				CD0FCF3D26D7787000398364 /* EDNLearnCacheIntegrationTests.swift */,
+				CD0FCF3F26D7787000398364 /* Info.plist */,
+			);
+			path = EDNLearnCacheIntegrationTests;
+			sourceTree = "<group>";
+		};
 		CD10FC7C266C90A900A84E66 = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +224,7 @@
 				CD10FCA3266C90CB00A84E66 /* EDNLearnMac */,
 				CD10FCAE266C90CC00A84E66 /* EDNLearnMacTests */,
 				CD6907252685AA9E001E9E4D /* EDNLearnAPIEndToEndTests */,
+				CD0FCF3C26D7787000398364 /* EDNLearnCacheIntegrationTests */,
 				CD10FC86266C90AA00A84E66 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -206,6 +236,7 @@
 				CD10FCA2266C90CB00A84E66 /* EDNLearnMac.framework */,
 				CD10FCAA266C90CC00A84E66 /* EDNLearnMacTests.xctest */,
 				CD6907242685AA9E001E9E4D /* EDNLearnAPIEndToEndTests.xctest */,
+				CD0FCF3B26D7787000398364 /* EDNLearnCacheIntegrationTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -357,6 +388,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		CD0FCF3A26D7787000398364 /* EDNLearnCacheIntegrationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD0FCF4326D7787000398364 /* Build configuration list for PBXNativeTarget "EDNLearnCacheIntegrationTests" */;
+			buildPhases = (
+				CD0FCF3726D7787000398364 /* Sources */,
+				CD0FCF3826D7787000398364 /* Frameworks */,
+				CD0FCF3926D7787000398364 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD0FCF4226D7787000398364 /* PBXTargetDependency */,
+			);
+			name = EDNLearnCacheIntegrationTests;
+			productName = EDNLearnCacheIntegrationTests;
+			productReference = CD0FCF3B26D7787000398364 /* EDNLearnCacheIntegrationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		CD10FC84266C90AA00A84E66 /* EDNLearn */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD10FC99266C90AF00A84E66 /* Build configuration list for PBXNativeTarget "EDNLearn" */;
@@ -436,9 +485,12 @@
 		CD10FC7D266C90A900A84E66 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
+				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					CD0FCF3A26D7787000398364 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
 					CD10FC84266C90AA00A84E66 = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -471,11 +523,19 @@
 				CD10FCA1266C90CB00A84E66 /* EDNLearnMac */,
 				CD10FCA9266C90CC00A84E66 /* EDNLearnMacTests */,
 				CD6907232685AA9E001E9E4D /* EDNLearnAPIEndToEndTests */,
+				CD0FCF3A26D7787000398364 /* EDNLearnCacheIntegrationTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CD0FCF3926D7787000398364 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CD10FC83266C90AA00A84E66 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -547,6 +607,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CD0FCF3726D7787000398364 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD0FCF3E26D7787000398364 /* EDNLearnCacheIntegrationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CD10FC81266C90AA00A84E66 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -634,6 +702,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		CD0FCF4226D7787000398364 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD10FCA1266C90CB00A84E66 /* EDNLearnMac */;
+			targetProxy = CD0FCF4126D7787000398364 /* PBXContainerItemProxy */;
+		};
 		CD10FCAD266C90CC00A84E66 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CD10FCA1266C90CB00A84E66 /* EDNLearnMac */;
@@ -666,6 +739,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		CD0FCF4426D7787000398364 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = NT7V746EDB;
+				INFOPLIST_FILE = EDNLearnCacheIntegrationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_BUNDLE_IDENTIFIER = pm.EDNLearnCacheIntegrationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		CD0FCF4526D7787000398364 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = NT7V746EDB;
+				INFOPLIST_FILE = EDNLearnCacheIntegrationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_BUNDLE_IDENTIFIER = pm.EDNLearnCacheIntegrationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		CD10FC97266C90AF00A84E66 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -968,6 +1081,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CD0FCF4326D7787000398364 /* Build configuration list for PBXNativeTarget "EDNLearnCacheIntegrationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD0FCF4426D7787000398364 /* Debug */,
+				CD0FCF4526D7787000398364 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CD10FC80266C90A900A84E66 /* Build configuration list for PBXProject "EDNLearn" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
