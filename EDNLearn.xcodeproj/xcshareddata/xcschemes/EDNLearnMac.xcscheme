@@ -21,7 +21,7 @@
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
-            buildForTesting = "YES"
+            buildForTesting = "NO"
             buildForRunning = "NO"
             buildForProfiling = "NO"
             buildForArchiving = "NO"
@@ -49,7 +49,7 @@
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
-            buildForTesting = "YES"
+            buildForTesting = "NO"
             buildForRunning = "YES"
             buildForProfiling = "YES"
             buildForArchiving = "YES"
@@ -69,7 +69,6 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
-      codeCoverageEnabled = "YES"
       onlyGenerateCoverageForSpecifiedTargets = "YES">
       <CodeCoverageTargets>
          <BuildableReference
@@ -77,20 +76,6 @@
             BlueprintIdentifier = "CD10FCA1266C90CB00A84E66"
             BuildableName = "EDNLearnMac.framework"
             BlueprintName = "EDNLearnMac"
-            ReferencedContainer = "container:EDNLearn.xcodeproj">
-         </BuildableReference>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CD0FCF3A26D7787000398364"
-            BuildableName = "EDNLearnCacheIntegrationTests.xctest"
-            BlueprintName = "EDNLearnCacheIntegrationTests"
-            ReferencedContainer = "container:EDNLearn.xcodeproj">
-         </BuildableReference>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CD6907232685AA9E001E9E4D"
-            BuildableName = "EDNLearnAPIEndToEndTests.xctest"
-            BlueprintName = "EDNLearnAPIEndToEndTests"
             ReferencedContainer = "container:EDNLearn.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
@@ -110,30 +95,6 @@
                identifier = "com.apple.dt.IDEFoundation.CurrentLocationScenarioIdentifier"
                referenceType = "1">
             </LocationScenarioReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES"
-            testExecutionOrdering = "random">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CD6907232685AA9E001E9E4D"
-               BuildableName = "EDNLearnAPIEndToEndTests.xctest"
-               BlueprintName = "EDNLearnAPIEndToEndTests"
-               ReferencedContainer = "container:EDNLearn.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES"
-            testExecutionOrdering = "random">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CD0FCF3A26D7787000398364"
-               BuildableName = "EDNLearnCacheIntegrationTests.xctest"
-               BlueprintName = "EDNLearnCacheIntegrationTests"
-               ReferencedContainer = "container:EDNLearn.xcodeproj">
-            </BuildableReference>
          </TestableReference>
       </Testables>
    </TestAction>
