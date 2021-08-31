@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [ feature/image_feed/cache_feed_use_case ]
+    branches: [ main ]
   pull_request:
     branches: [ main ]
 
