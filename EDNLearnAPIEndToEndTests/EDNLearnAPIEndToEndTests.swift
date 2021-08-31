@@ -71,7 +71,7 @@ class EDNLearnAPIEndToEndTests: XCTestCase {
             "DC97EF5E-2CC9-4905-A8AD-3C351C311001",
             "557D87F1-25D3-4D77-82E9-364B2ED9CB30",
             "A83284EF-C2DF-415D-AB73-2A9B8B04950B",
-            "F79BD7F8-063F-46E2-8147-A67635C3BB01"
+            "F79BD7F8-063F-46E2-8147-A67635C3BB01",
         ][index])!
     }
 
@@ -84,7 +84,7 @@ class EDNLearnAPIEndToEndTests: XCTestCase {
             "Description 5",
             "Description 6",
             "Description 7",
-            "Description 8"
+            "Description 8",
         ][index]
     }
 
@@ -97,7 +97,7 @@ class EDNLearnAPIEndToEndTests: XCTestCase {
             "Location 5",
             "Location 6",
             "Location 7",
-            "Location 8"
+            "Location 8",
         ][index]
     }
 

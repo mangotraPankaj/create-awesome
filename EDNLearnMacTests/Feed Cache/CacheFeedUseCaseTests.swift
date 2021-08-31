@@ -13,20 +13,20 @@ class CacheFeedUseCaseTests: XCTestCase {
         let (_, store) = makeSUT()
         XCTAssertEqual(store.receivedMessages, [])
     }
-    
+
     func test_save_requestCacheDeletion() {
         let (sut, store) = makeSUT()
         sut.save(uniqueImageFeed().models) { _ in }
-        
+
         XCTAssertEqual(store.receivedMessages, [.deleteCachedFeed])
     }
-    
+
     func test_save_doesNotRequestCacheInsertionOnDeletionError() {
         let (sut, store) = makeSUT()
         let deletionError = anyError()
         sut.save(uniqueImageFeed().models) { _ in }
         store.completeDeletion(with: deletionError)
-        
+
         XCTAssertEqual(store.receivedMessages, [.deleteCachedFeed])
     }
 
@@ -36,29 +36,29 @@ class CacheFeedUseCaseTests: XCTestCase {
         let (sut, store) = makeSUT(currentDate: { timestamp })
         sut.save(feed.models) { _ in }
         store.completeDeletionSuccessfully()
-        
+
         XCTAssertEqual(store.receivedMessages, [.deleteCachedFeed, .insert(feed.local, timestamp)])
     }
 
     func test_save_failsOnDeletionError() {
         let (sut, store) = makeSUT()
         let deletionError = anyError()
-        
+
         expect(sut, toCompleteWithError: deletionError, when: {
             store.completeDeletion(with: deletionError)
         })
     }
-    
+
     func test_save_failsOnInsertionError() {
         let (sut, store) = makeSUT()
         let insertionError = anyError()
-        
+
         expect(sut, toCompleteWithError: insertionError, when: {
             store.completeDeletionSuccessfully()
             store.completeInsertion(with: insertionError)
         })
     }
-    
+
     func test_save_succeedsOnSuccessfulCacheInsertion() {
         let (sut, store) = makeSUT()
         expect(sut, toCompleteWithError: nil, when: {
@@ -70,28 +70,28 @@ class CacheFeedUseCaseTests: XCTestCase {
     func test_save_doesNotDeliverDeletionErrorAfterSUTInstanceHasBeenDeallocated() {
         let store = FeedStoreSpy()
         var sut: LocalFeedLoader? = LocalFeedLoader(store: store, currentDate: Date.init)
-        
-        var recievedResults = [LocalFeedLoader.saveResult]()
+
+        var recievedResults = [LocalFeedLoader.SaveResult]()
         sut?.save(uniqueImageFeed().models) { recievedResults.append($0) }
-        
+
         sut = nil
         store.completeDeletion(with: anyError())
-        
+
         XCTAssertTrue(recievedResults.isEmpty)
     }
-    
+
     func test_save_doesNotDeliverInsertionErrorAfterSUTInstanceHasBeenDeallocated() {
         let store = FeedStoreSpy()
         var sut: LocalFeedLoader? = LocalFeedLoader(store: store, currentDate: Date.init)
-        
-        var recievedResults = [LocalFeedLoader.saveResult]()
+
+        var recievedResults = [LocalFeedLoader.SaveResult]()
         sut?.save(uniqueImageFeed().models) { recievedResults.append($0) }
-        
+
         store.completeDeletionSuccessfully()
         sut = nil
-        
+
         store.completeInsertion(with: anyError())
-        
+
         XCTAssertTrue(recievedResults.isEmpty)
     }
 
@@ -106,34 +106,16 @@ class CacheFeedUseCaseTests: XCTestCase {
         }
         action()
         wait(for: [exp], timeout: 1.0)
-        
+
         XCTAssertEqual(receivedError as NSError?, expectedError, file: file, line: line)
     }
-    
+
     private func makeSUT(currentDate: @escaping () -> Date = Date.init, file: StaticString = #filePath, line: UInt = #line) -> (sut: LocalFeedLoader, store: FeedStoreSpy) {
         let store = FeedStoreSpy()
         let sut = LocalFeedLoader(store: store, currentDate: currentDate)
         trackForMemoryLeaks(store, file: file, line: line)
         trackForMemoryLeaks(sut, file: file, line: line)
-        
+
         return (sut, store)
-    }
-    
-    private func uniqueImage() -> FeedImage {
-        return FeedImage(id: UUID(), description: "any", location: "any", url: anyURL())
-    }
-    
-    private func uniqueImageFeed() -> (models: [FeedImage], local: [LocalFeedImage]) {
-        let models = [uniqueImage(), uniqueImage()]
-        let local = models.map { LocalFeedImage(id: $0.id, description: $0.description, location: $0.location, url: $0.url) }
-        return (models, local)
-    }
-    
-    private func anyURL() -> URL {
-        return URL(string: "http://any-url.com")!
-    }
-    
-    private func anyError() -> NSError {
-        return NSError(domain: "any error", code: 1)
     }
 }

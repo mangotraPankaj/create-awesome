@@ -9,13 +9,13 @@ import Foundation
 
 public class URLSessionHTTPClient: HTTPClient {
     private let session: URLSession
-    
+
     public init(session: URLSession = .shared) {
         self.session = session
     }
 
     private struct UnexpectedValuesRepresentation: Error {}
-    
+
     public func get(from url: URL, completion: @escaping (HTTPClientResult) -> Void) {
         session.dataTask(with: url) { data, response, error in
             if let error = error {
@@ -32,7 +32,7 @@ public class URLSessionHTTPClient: HTTPClient {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.httpBody = data
-        
+
         session.dataTask(with: request) { data, response, error in
             if let error = error {
                 completion(.failure(error))
@@ -48,16 +48,16 @@ public class URLSessionHTTPClient: HTTPClient {
 public extension URLRequest {
     var httpBodyData: Data? {
         guard let stream = httpBodyStream else { return httpBody }
-    
+
         let bufferSize = 1024
         var data = Data()
         var buffer = [UInt8](repeating: 0, count: bufferSize)
-    
+
         stream.open()
-    
+
         while stream.hasBytesAvailable {
             let length = stream.read(&buffer, maxLength: bufferSize)
-      
+
             if length == 0 {
                 break
             } else {
@@ -65,7 +65,7 @@ public extension URLRequest {
             }
         }
         stream.close()
-    
+
         return data
     }
 }

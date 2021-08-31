@@ -9,4 +9,3 @@ let package = Package(
     ],
     targets: [.target(name: "BuildTools", path: "")]
 )
-

@@ -1,0 +1,16 @@
+name: cache_feed_use_case
+
+on:
+  push:
+    branches: [ feature/image_feed/cache_feed_use_case ]
+
+jobs:
+  build-and-test:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build-and-Test
+      run: xcodebuild clean build test -project EDNLearn.xcodeproj -scheme "CI" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
