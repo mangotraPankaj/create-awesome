@@ -37,7 +37,7 @@ class EDNLearnAPIEndToEndTests: XCTestCase {
     // MARK: - Helpers
 
     private func getFeedResult(file: StaticString = #filePath,
-                               line: UInt = #line) -> LoadFeedResult?
+                               line: UInt = #line) -> FeedLoader.Result?
     {
         let testServerURL = URL(string: "https://static1.squarespace.com/static/5891c5b8d1758ec68ef5dbc2/t/5c52cdd0b8a045df091d2fff/1548930512083/feed-case-study-test-api-feed.json")!
         let client = URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))
@@ -46,7 +46,7 @@ class EDNLearnAPIEndToEndTests: XCTestCase {
         trackForMemoryLeaks(loader, file: file, line: line)
 
         let exp = expectation(description: "Wait for the load to complete")
-        var recievedResult: LoadFeedResult?
+        var recievedResult: FeedLoader.Result?
         loader.load { result in
             recievedResult = result
             exp.fulfill()
