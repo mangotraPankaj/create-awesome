@@ -12,6 +12,7 @@
 		CD9EAD9626E5E7630011C175 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD9EAD9426E5E7630011C175 /* Main.storyboard */; };
 		CD9EAD9826E5E7670011C175 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD9EAD9726E5E7670011C175 /* Assets.xcassets */; };
 		CD9EAD9B26E5E7670011C175 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD9EAD9926E5E7670011C175 /* LaunchScreen.storyboard */; };
+		CD9EADA526E5F5F70011C175 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9EADA426E5F5F70011C175 /* FeedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		CD9EAD9726E5E7670011C175 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD9EAD9A26E5E7670011C175 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD9EAD9C26E5E7670011C175 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD9EADA426E5F5F70011C175 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				CD9EAD8E26E5E7630011C175 /* AppDelegate.swift */,
 				CD9EAD9026E5E7630011C175 /* SceneDelegate.swift */,
 				CD9EAD9426E5E7630011C175 /* Main.storyboard */,
+				CD9EADA426E5F5F70011C175 /* FeedViewController.swift */,
 				CD9EAD9726E5E7670011C175 /* Assets.xcassets */,
 				CD9EAD9926E5E7670011C175 /* LaunchScreen.storyboard */,
 				CD9EAD9C26E5E7670011C175 /* Info.plist */,
@@ -135,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD9EAD8F26E5E7630011C175 /* AppDelegate.swift in Sources */,
+				CD9EADA526E5F5F70011C175 /* FeedViewController.swift in Sources */,
 				CD9EAD9126E5E7630011C175 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
