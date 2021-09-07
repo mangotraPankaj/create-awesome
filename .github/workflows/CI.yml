@@ -13,6 +13,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Send Push Notification
+      uses: techulus/push-github-action@1.0.0
+      env:
+        API_KEY: ${{ 55bbac0d-2300-432c-8403-32374bb201d7 }}
+        MESSAGE: "CI git action triggered and passed"
+    
 
     - name: Build-and-Test
       run: xcodebuild clean build test -project EDNLearn.xcodeproj -scheme "CI" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
