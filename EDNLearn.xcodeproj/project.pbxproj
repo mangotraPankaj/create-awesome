@@ -55,9 +55,6 @@
 		CD6907372687675A001E9E4D /* XCTestCase+MemoryLeakTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1FF62026806A70008FCA6B /* XCTestCase+MemoryLeakTracker.swift */; };
 		CD6AA02226C0FB2800CB33DC /* FeedCachePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6AA02126C0FB2800CB33DC /* FeedCachePolicy.swift */; };
 		CD6AA02326C0FB5C00CB33DC /* FeedCachePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6AA02126C0FB2800CB33DC /* FeedCachePolicy.swift */; };
-		CD6AA02826C25B7E00CB33DC /* CodableFeedStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6AA02726C25B7E00CB33DC /* CodableFeedStoreTests.swift */; };
-		CD6AA04A26CBA22500CB33DC /* CodableFeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6AA04926CBA22500CB33DC /* CodableFeedStore.swift */; };
-		CD6AA04B26CBA22500CB33DC /* CodableFeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6AA04926CBA22500CB33DC /* CodableFeedStore.swift */; };
 		CD8EA7DD26B7C641004A9AED /* ValidateFeedCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8EA7DC26B7C641004A9AED /* ValidateFeedCacheUseCaseTests.swift */; };
 		CD8EA7DF26B7CD64004A9AED /* FeedCacheTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8EA7DE26B7CD64004A9AED /* FeedCacheTestHelpers.swift */; };
 		CD8EA7E126B7D04D004A9AED /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8EA7E026B7D04D004A9AED /* SharedTestHelpers.swift */; };
@@ -139,8 +136,6 @@
 		CD6907262685AA9E001E9E4D /* EDNLearnAPIEndToEndTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDNLearnAPIEndToEndTests.swift; sourceTree = "<group>"; };
 		CD6907282685AA9E001E9E4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD6AA02126C0FB2800CB33DC /* FeedCachePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCachePolicy.swift; sourceTree = "<group>"; };
-		CD6AA02726C25B7E00CB33DC /* CodableFeedStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableFeedStoreTests.swift; sourceTree = "<group>"; };
-		CD6AA04926CBA22500CB33DC /* CodableFeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableFeedStore.swift; sourceTree = "<group>"; };
 		CD8EA7DC26B7C641004A9AED /* ValidateFeedCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateFeedCacheUseCaseTests.swift; sourceTree = "<group>"; };
 		CD8EA7DE26B7CD64004A9AED /* FeedCacheTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCacheTestHelpers.swift; sourceTree = "<group>"; };
 		CD8EA7E026B7D04D004A9AED /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
@@ -201,7 +196,6 @@
 		CD0FCF2926D4A99500398364 /* Infra */ = {
 			isa = PBXGroup;
 			children = (
-				CD6AA04926CBA22500CB33DC /* CodableFeedStore.swift */,
 				CD0FCF1226D4A5D500398364 /* FeedStore.xcdatamodeld */,
 				CD0FCF2A26D4AB3800398364 /* CoreDataFeedStore.swift */,
 				CD0FCF3426D6218F00398364 /* ManagedFeedImage.swift */,
@@ -366,7 +360,6 @@
 				CDDC85B926A9463B007C3F4B /* LoadFeedFromCacheUseCaseTests.swift */,
 				CD8EA7DC26B7C641004A9AED /* ValidateFeedCacheUseCaseTests.swift */,
 				CDF09E4B26982E5200F8E8D8 /* CacheFeedUseCaseTests.swift */,
-				CD6AA02726C25B7E00CB33DC /* CodableFeedStoreTests.swift */,
 				CDD292FB26D38EA400BA5BFB /* CoreDataFeedStoreTests.swift */,
 				CD2C775D26CF883600077249 /* FeedStoreSpecs.swift */,
 				CD2C775F26CF8A2000077249 /* XCTestCase+FeedStoreSpecs.swift */,
@@ -633,7 +626,6 @@
 				CD0FCF3526D6218F00398364 /* ManagedFeedImage.swift in Sources */,
 				CD0FCF2B26D4AB3800398364 /* CoreDataFeedStore.swift in Sources */,
 				CD0FCF2F26D6208800398364 /* CoreDataHelpers.swift in Sources */,
-				CD6AA04A26CBA22500CB33DC /* CodableFeedStore.swift in Sources */,
 				CD4CC8F326787ADE0093103C /* FeedItemMapper.swift in Sources */,
 				CD10FC8D266C90AA00A84E66 /* ViewController.swift in Sources */,
 				CD10FC89266C90AA00A84E66 /* AppDelegate.swift in Sources */,
@@ -663,7 +655,6 @@
 				CD1E4AF426A6A8CD00762BB0 /* LocalFeedImage.swift in Sources */,
 				CDEC40FA26A0096600C745F8 /* FeedStore.swift in Sources */,
 				CDEC40F726A007BD00C745F8 /* LocalFeedLoader.swift in Sources */,
-				CD6AA04B26CBA22500CB33DC /* CodableFeedStore.swift in Sources */,
 				CDFEFDB9267876F0004BA307 /* HTTPClient.swift in Sources */,
 				CD163F51266DF38000835B83 /* FeedImage.swift in Sources */,
 				CD0FCF3326D6214C00398364 /* ManagedCache.swift in Sources */,
@@ -677,7 +668,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD2C776026CF8A2000077249 /* XCTestCase+FeedStoreSpecs.swift in Sources */,
-				CD6AA02826C25B7E00CB33DC /* CodableFeedStoreTests.swift in Sources */,
 				CD163F5C266DFD9E00835B83 /* LoadFeedFromRemoteUseCaseTests.swift in Sources */,
 				CDD292FC26D38EA400BA5BFB /* CoreDataFeedStoreTests.swift in Sources */,
 				CDD292F626D37E1D00BA5BFB /* XCTestCase+FailableRetrieveFeedStoreSpecs.swift in Sources */,
@@ -965,6 +955,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -996,6 +987,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1019,6 +1011,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = pm.EDNLearnMacTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1040,6 +1033,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = pm.EDNLearnMacTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
