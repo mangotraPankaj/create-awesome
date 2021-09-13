@@ -45,6 +45,8 @@
 		CD1FF5EB267C92D4008FCA6B /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1FF5EA267C92D4008FCA6B /* URLSessionHTTPClientTests.swift */; };
 		CD1FF62126806A70008FCA6B /* XCTestCase+MemoryLeakTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1FF62026806A70008FCA6B /* XCTestCase+MemoryLeakTracker.swift */; };
 		CD286FE226E9E88C0070022B /* FeedViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD286FE126E9E88C0070022B /* FeedViewControllerTests.swift */; };
+		CD286FE526EF25330070022B /* EDNLearnMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD10FCA2266C90CB00A84E66 /* EDNLearnMac.framework */; };
+		CD286FE626EF25330070022B /* EDNLearnMac.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD10FCA2266C90CB00A84E66 /* EDNLearnMac.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CD2C775E26CF883600077249 /* FeedStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C775D26CF883600077249 /* FeedStoreSpecs.swift */; };
 		CD2C776026CF8A2000077249 /* XCTestCase+FeedStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C775F26CF8A2000077249 /* XCTestCase+FeedStoreSpecs.swift */; };
 		CD4CC8F326787ADE0093103C /* FeedItemMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4CC8F226787ADE0093103C /* FeedItemMapper.swift */; };
@@ -91,6 +93,13 @@
 			remoteGlobalIDString = CD10FCA1266C90CB00A84E66;
 			remoteInfo = EDNLearnMac;
 		};
+		CD286FE726EF25330070022B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD10FC7D266C90A900A84E66 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD10FCA1266C90CB00A84E66;
+			remoteInfo = EDNLearnMac;
+		};
 		CD69072A2685AA9E001E9E4D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CD10FC7D266C90A900A84E66 /* Project object */;
@@ -106,6 +115,20 @@
 			remoteInfo = EssentialFeediOS;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CD286FE926EF25330070022B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CD286FE626EF25330070022B /* EDNLearnMac.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CD0FCF1326D4A5D500398364 /* FeedStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FeedStore.xcdatamodel; sourceTree = "<group>"; };
@@ -210,6 +233,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD286FE526EF25330070022B /* EDNLearnMac.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +280,7 @@
 				CD72557926E8977E00C5CD3E /* EssentialFeediOS */,
 				CD72558426E8977E00C5CD3E /* EssentialFeediOSTests */,
 				CD10FC86266C90AA00A84E66 /* Products */,
+				CD286FE426EF25330070022B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -334,6 +359,13 @@
 				CD8EA7E026B7D04D004A9AED /* SharedTestHelpers.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CD286FE426EF25330070022B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		CD4CC90426788C040093103C /* Feed API */ = {
@@ -544,10 +576,12 @@
 				CD72557526E8977E00C5CD3E /* Frameworks */,
 				CD72557626E8977E00C5CD3E /* Resources */,
 				CD286FE326EF23E10070022B /* ShellScript */,
+				CD286FE926EF25330070022B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CD286FE826EF25330070022B /* PBXTargetDependency */,
 			);
 			name = EssentialFeediOS;
 			productName = EssentialFeediOS;
@@ -860,6 +894,11 @@
 			isa = PBXTargetDependency;
 			target = CD10FCA1266C90CB00A84E66 /* EDNLearnMac */;
 			targetProxy = CD10FCAC266C90CC00A84E66 /* PBXContainerItemProxy */;
+		};
+		CD286FE826EF25330070022B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD10FCA1266C90CB00A84E66 /* EDNLearnMac */;
+			targetProxy = CD286FE726EF25330070022B /* PBXContainerItemProxy */;
 		};
 		CD69072B2685AA9E001E9E4D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
