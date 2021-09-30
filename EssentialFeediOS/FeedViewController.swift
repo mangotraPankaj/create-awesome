@@ -92,9 +92,9 @@ public final class FeedViewController: UITableViewController, UITableViewDataSou
         }
     }
 
-//    public func tableView(_: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
-//        indexPaths.forEach(cancelTask)
-//    }
+    public func tableView(_: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
+        indexPaths.forEach(cancelTask)
+    }
 
     private func cancelTask(forRowAt indexPath: IndexPath) {
         tasks[indexPath]?.cancel()

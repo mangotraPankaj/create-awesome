@@ -224,7 +224,7 @@ final class FeedViewControllerTests: XCTestCase {
         sut.simulateFeedImageViewNearVisible(at: 1)
         XCTAssertEqual(loader.loadedImageURLs, [image0.url, image1.url], "Expected second imageURL request after second image is near visible")
     }
-    /*func test_feedImageView_cancelsImageURLPreLoadingWhenNotNearVisibleAnymore() {
+    func test_feedImageView_cancelsImageURLPreLoadingWhenNotNearVisibleAnymore() {
         let image0 = makeImage(url: URL(string: "http://url-0.com")!)
         let image1 = makeImage(url: URL(string: "http://url-1.com")!)
         let (sut, loader) = makeSUT()
@@ -239,7 +239,7 @@ final class FeedViewControllerTests: XCTestCase {
 
         sut.simulateFeedImageViewNotNearVisible(at: 1)
         XCTAssertEqual(loader.cancelledImageURLs, [image0.url, image1.url], "Expected second imageURL request after second image is near visible")
-    }*/
+    }
 
     // MARK: Helpers
 
