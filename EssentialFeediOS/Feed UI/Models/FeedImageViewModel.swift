@@ -8,7 +8,6 @@
 import EDNLearnMac
 
 final class FeedImageViewModel<Image> {
-    
     typealias Observer<T> = (T) -> Void
 
     private var task: FeedImageDataLoaderTask?
