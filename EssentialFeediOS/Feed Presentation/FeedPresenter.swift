@@ -6,6 +6,7 @@
 //
 
 import EDNLearnMac
+import Foundation
 
 // Created FeedLoadingViewModel which wraps the boolean to give more context and give us ability to add more variables to it without breaking the tests
 struct FeedLoadingViewModel {
@@ -31,7 +32,10 @@ final class FeedPresenter {
     private let loadingView: FeedLoadingView
 
     static var title: String {
-        return "My Feed"
+        return NSLocalizedString("FEED_VIEW_TITLE",
+                                 tableName: "Feed",
+                                 bundle: Bundle(for: FeedPresenter.self),
+                                 comment: "Title for the feed view")
     }
 
     init(feedView: FeedView, loadingView: FeedLoadingView) {
