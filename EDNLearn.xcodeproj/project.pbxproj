@@ -76,6 +76,7 @@
 		CD8520CD27390D74005976B9 /* FeedViewControllerTests+Assertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8520CC27390D74005976B9 /* FeedViewControllerTests+Assertions.swift */; };
 		CD8520CF27390E12005976B9 /* FeedViewControllerTests+LoaderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8520CE27390E12005976B9 /* FeedViewControllerTests+LoaderSpy.swift */; };
 		CD8520D0273A6028005976B9 /* Feed.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD8520D2273A6028005976B9 /* Feed.strings */; };
+		CD8520D8273A62B3005976B9 /* FeedLocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8520D7273A62B3005976B9 /* FeedLocalizationTests.swift */; };
 		CD8E249B26F1D30600ECF322 /* FeedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E249A26F1D30600ECF322 /* FeedImageCell.swift */; };
 		CD8EA7DD26B7C641004A9AED /* ValidateFeedCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8EA7DC26B7C641004A9AED /* ValidateFeedCacheUseCaseTests.swift */; };
 		CD8EA7DF26B7CD64004A9AED /* FeedCacheTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8EA7DE26B7CD64004A9AED /* FeedCacheTestHelpers.swift */; };
@@ -214,6 +215,7 @@
 		CD8520D1273A6028005976B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Feed.strings; sourceTree = "<group>"; };
 		CD8520D3273A60E0005976B9 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Feed.strings"; sourceTree = "<group>"; };
 		CD8520D4273A6136005976B9 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Feed.strings; sourceTree = "<group>"; };
+		CD8520D7273A62B3005976B9 /* FeedLocalizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLocalizationTests.swift; sourceTree = "<group>"; };
 		CD8E249A26F1D30600ECF322 /* FeedImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageCell.swift; sourceTree = "<group>"; };
 		CD8EA7DC26B7C641004A9AED /* ValidateFeedCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateFeedCacheUseCaseTests.swift; sourceTree = "<group>"; };
 		CD8EA7DE26B7CD64004A9AED /* FeedCacheTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCacheTestHelpers.swift; sourceTree = "<group>"; };
@@ -499,7 +501,8 @@
 		CD72558426E8977E00C5CD3E /* EssentialFeediOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				CD8520BE27390895005976B9 /* Controllers */,
+				CD8520D6273A61FD005976B9 /* Feed Presentation */,
+				CD8520D5273A61E0005976B9 /* Feed UI */,
 				CD72558726E8977E00C5CD3E /* Info.plist */,
 			);
 			path = EssentialFeediOSTests;
@@ -523,15 +526,6 @@
 			path = "Feed Presentation";
 			sourceTree = "<group>";
 		};
-		CD8520BE27390895005976B9 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				CD8520BF273908A1005976B9 /* Helpers */,
-				CD286FE126E9E88C0070022B /* FeedUIIntegrationTests.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
 		CD8520BF273908A1005976B9 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -545,6 +539,23 @@
 				CD8520CE27390E12005976B9 /* FeedViewControllerTests+LoaderSpy.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CD8520D5273A61E0005976B9 /* Feed UI */ = {
+			isa = PBXGroup;
+			children = (
+				CD286FE126E9E88C0070022B /* FeedUIIntegrationTests.swift */,
+				CD8520BF273908A1005976B9 /* Helpers */,
+			);
+			path = "Feed UI";
+			sourceTree = "<group>";
+		};
+		CD8520D6273A61FD005976B9 /* Feed Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CD8520D7273A62B3005976B9 /* FeedLocalizationTests.swift */,
+			);
+			path = "Feed Presentation";
 			sourceTree = "<group>";
 		};
 		CDDC85BC26A948B7007C3F4B /* Helpers */ = {
@@ -1035,6 +1046,7 @@
 				CD8520CB27390C96005976B9 /* FeedViewController+TestHelpers.swift in Sources */,
 				CD286FE226E9E88C0070022B /* FeedUIIntegrationTests.swift in Sources */,
 				CD8520CF27390E12005976B9 /* FeedViewControllerTests+LoaderSpy.swift in Sources */,
+				CD8520D8273A62B3005976B9 /* FeedLocalizationTests.swift in Sources */,
 				CD8520C727390B7D005976B9 /* UIRefreshControl+TestHelpers.swift in Sources */,
 				CD8520CD27390D74005976B9 /* FeedViewControllerTests+Assertions.swift in Sources */,
 				CD8520C527390B2B005976B9 /* UIButton+TestHelpers.swift in Sources */,
