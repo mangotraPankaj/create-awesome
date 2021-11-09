@@ -213,6 +213,7 @@
 		CD8520CE27390E12005976B9 /* FeedViewControllerTests+LoaderSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedViewControllerTests+LoaderSpy.swift"; sourceTree = "<group>"; };
 		CD8520D1273A6028005976B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Feed.strings; sourceTree = "<group>"; };
 		CD8520D3273A60E0005976B9 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Feed.strings"; sourceTree = "<group>"; };
+		CD8520D4273A6136005976B9 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Feed.strings; sourceTree = "<group>"; };
 		CD8E249A26F1D30600ECF322 /* FeedImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageCell.swift; sourceTree = "<group>"; };
 		CD8EA7DC26B7C641004A9AED /* ValidateFeedCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateFeedCacheUseCaseTests.swift; sourceTree = "<group>"; };
 		CD8EA7DE26B7CD64004A9AED /* FeedCacheTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCacheTestHelpers.swift; sourceTree = "<group>"; };
@@ -786,6 +787,7 @@
 				en,
 				Base,
 				"pt-BR",
+				el,
 			);
 			mainGroup = CD10FC7C266C90A900A84E66;
 			productRefGroup = CD10FC86266C90AA00A84E66 /* Products */;
@@ -1095,6 +1097,7 @@
 			children = (
 				CD8520D1273A6028005976B9 /* en */,
 				CD8520D3273A60E0005976B9 /* pt-BR */,
+				CD8520D4273A6136005976B9 /* el */,
 			);
 			name = Feed.strings;
 			sourceTree = "<group>";
