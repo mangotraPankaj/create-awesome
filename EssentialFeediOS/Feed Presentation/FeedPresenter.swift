@@ -9,16 +9,13 @@ import EDNLearnMac
 import Foundation
 
 // Created FeedLoadingViewModel which wraps the boolean to give more context and give us ability to add more variables to it without breaking the tests
-struct FeedLoadingViewModel {
-    let isLoading: Bool
-}
 
 protocol FeedLoadingView {
     func display(_ viewModel: FeedLoadingViewModel)
 }
 
-struct FeedViewModel {
-    let feed: [FeedImage]
+protocol FeedErrorView {
+    func display(_ viewModel: ErrorViewModel)
 }
 
 protocol FeedView {
@@ -30,6 +27,7 @@ final class FeedPresenter {
 
     private let feedView: FeedView
     private let loadingView: FeedLoadingView
+    private let errorView: FeedErrorView
 
     static var title: String {
         return NSLocalizedString("FEED_VIEW_TITLE",
@@ -38,21 +36,25 @@ final class FeedPresenter {
                                  comment: "Title for the feed view")
     }
 
-    init(feedView: FeedView, loadingView: FeedLoadingView) {
+    init(feedView: FeedView, loadingView: FeedLoadingView, errorView: FeedErrorView) {
         self.feedView = feedView
         self.loadingView = loadingView
+        self.errorView = errorView
     }
 
     func didStartLoadingFeed() {
         loadingView.display(FeedLoadingViewModel(isLoading: true))
+        errorView.display(ErrorViewModel(message: nil))
     }
 
     func didFinishLoadingFeed(with feed: [FeedImage]) {
         feedView.display(FeedViewModel(feed: feed))
         loadingView.display(FeedLoadingViewModel(isLoading: false))
+        errorView.display(ErrorViewModel(message: nil))
     }
 
     func didFinishLoadingFeed(with _: Error) {
         loadingView.display(FeedLoadingViewModel(isLoading: false))
+        errorView.display(ErrorViewModel(message: Localized.Feed.loadError))
     }
 }

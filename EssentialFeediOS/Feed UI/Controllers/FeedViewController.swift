@@ -12,7 +12,17 @@ protocol FeedViewControllerDelegate {
     func didRequestFeedRefresh()
 }
 
-public final class FeedViewController: UITableViewController, UITableViewDataSourcePrefetching, FeedLoadingView {
+public final class FeedViewController: UITableViewController, UITableViewDataSourcePrefetching, FeedLoadingView, FeedErrorView {
+    @IBOutlet public private(set) var errorView: ErrorView?
+
+    func display(_ viewModel: ErrorViewModel) {
+        if let message = viewModel.message {
+            errorView?.show(message: message)
+        } else {
+            errorView?.hideMessage()
+        }
+    }
+
     var delegate: FeedViewControllerDelegate?
 
     var tableModel = [FeedImageCellController]() {
