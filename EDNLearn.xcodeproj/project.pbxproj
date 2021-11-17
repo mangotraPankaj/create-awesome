@@ -101,6 +101,7 @@
 		CDDCC47E273BAF4D002010F5 /* FeedViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDCC47D273BAF4D002010F5 /* FeedViewAdapter.swift */; };
 		CDDCC480273BAFA9002010F5 /* FeedImageDataLoaderPresentationAdapater.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDCC47F273BAFA9002010F5 /* FeedImageDataLoaderPresentationAdapater.swift */; };
 		CDDCC482273BAFE8002010F5 /* FeedLoaderPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDCC481273BAFE8002010F5 /* FeedLoaderPresentationAdapter.swift */; };
+		CDE922152744DDDE008E3C45 /* FeedPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE922142744DDDE008E3C45 /* FeedPresenterTests.swift */; };
 		CDEC40F626A007BD00C745F8 /* LocalFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC40F526A007BD00C745F8 /* LocalFeedLoader.swift */; };
 		CDEC40F726A007BD00C745F8 /* LocalFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC40F526A007BD00C745F8 /* LocalFeedLoader.swift */; };
 		CDEC40F926A0096600C745F8 /* FeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC40F826A0096600C745F8 /* FeedStore.swift */; };
@@ -250,6 +251,7 @@
 		CDDCC47D273BAF4D002010F5 /* FeedViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewAdapter.swift; sourceTree = "<group>"; };
 		CDDCC47F273BAFA9002010F5 /* FeedImageDataLoaderPresentationAdapater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderPresentationAdapater.swift; sourceTree = "<group>"; };
 		CDDCC481273BAFE8002010F5 /* FeedLoaderPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderPresentationAdapter.swift; sourceTree = "<group>"; };
+		CDE922142744DDDE008E3C45 /* FeedPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPresenterTests.swift; sourceTree = "<group>"; };
 		CDEC40F526A007BD00C745F8 /* LocalFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFeedLoader.swift; sourceTree = "<group>"; };
 		CDEC40F826A0096600C745F8 /* FeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStore.swift; sourceTree = "<group>"; };
 		CDF09E4B26982E5200F8E8D8 /* CacheFeedUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheFeedUseCaseTests.swift; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 		CD10FCAE266C90CC00A84E66 /* EDNLearnMacTests */ = {
 			isa = PBXGroup;
 			children = (
+				CDE922112744DD67008E3C45 /* Feed Presentation */,
 				CD1FF61F26806A50008FCA6B /* Helpers */,
 				CDF09E4A26982E1D00F8E8D8 /* Feed Cache */,
 				CD4CC90426788C040093103C /* Feed API */,
@@ -584,6 +587,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		CDE922112744DD67008E3C45 /* Feed Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CDE922142744DDDE008E3C45 /* FeedPresenterTests.swift */,
+			);
+			path = "Feed Presentation";
+			sourceTree = "<group>";
+		};
 		CDEC40F426A007A200C745F8 /* Feed Cache */ = {
 			isa = PBXGroup;
 			children = (
@@ -672,7 +683,6 @@
 				CD10FC81266C90AA00A84E66 /* Sources */,
 				CD10FC82266C90AA00A84E66 /* Frameworks */,
 				CD10FC83266C90AA00A84E66 /* Resources */,
-				CD322333267342DB00A90502 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -914,23 +924,6 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ncd BuildTools\nSDKROOT=macosx\n#swift package update #Uncomment this line temporarily to update the version used to the latest matching your BuildTools/Package.swift file\nswift run -c release swiftformat \"$SRCROOT\"\n";
 		};
-		CD322333267342DB00A90502 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
 		CDDC85BF26A94E5F007C3F4B /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -946,7 +939,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd BuildTools\nSDKROOT=macosx\n#swift package update #Uncomment this line temporarily to update the version used to the latest matching your BuildTools/Package.swift file\nswift run -c release swiftformat \"$SRCROOT\"\n";
+			shellScript = "cd BuildTools\nSDKROOT=(xcrun --sdk macosx --show-sdk-path)\n#swift package update #Uncomment this line temporarily to update the version used to the latest matching your BuildTools/Package.swift file\nswift run -c release swiftformat \"$SRCROOT\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1021,6 +1014,7 @@
 				CDD292F626D37E1D00BA5BFB /* XCTestCase+FailableRetrieveFeedStoreSpecs.swift in Sources */,
 				CD1FF62126806A70008FCA6B /* XCTestCase+MemoryLeakTracker.swift in Sources */,
 				CD8EA7E126B7D04D004A9AED /* SharedTestHelpers.swift in Sources */,
+				CDE922152744DDDE008E3C45 /* FeedPresenterTests.swift in Sources */,
 				CDDC85BB26A94645007C3F4B /* LoadFeedFromCacheUseCaseTests.swift in Sources */,
 				CD1FF5EB267C92D4008FCA6B /* URLSessionHTTPClientTests.swift in Sources */,
 				CD8EA7DF26B7CD64004A9AED /* FeedCacheTestHelpers.swift in Sources */,
