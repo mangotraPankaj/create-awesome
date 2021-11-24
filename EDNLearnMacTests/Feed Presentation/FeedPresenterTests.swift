@@ -41,6 +41,7 @@ class FeedPresenterTests: XCTestCase {
     func test_didStartLoadingFeed_displaysNoErrorMessage() {
         let (_, view) = makeSUT()
 
+        sut.didStartLoadingFeed()
         XCTAssertEqual(view.messages, [.display(errorMessage: .none)])
     }
 
