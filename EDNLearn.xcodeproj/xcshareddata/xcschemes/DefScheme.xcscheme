@@ -40,9 +40,6 @@
             </BuildableReference>
             <SkippedTests>
                <Test
-                  Identifier = "CacheFeedUseCaseTests">
-               </Test>
-               <Test
                   Identifier = "CoreDataFeedStoreTests">
                </Test>
                <Test
