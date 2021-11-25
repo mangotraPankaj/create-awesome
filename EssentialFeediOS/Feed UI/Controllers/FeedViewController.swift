@@ -5,7 +5,7 @@
 //  Created by Pankaj Mangotra on 13/09/21.
 //
 
-import Foundation
+import EDNLearnMac
 import UIKit
 
 protocol FeedViewControllerDelegate {
@@ -15,7 +15,7 @@ protocol FeedViewControllerDelegate {
 public final class FeedViewController: UITableViewController, UITableViewDataSourcePrefetching, FeedLoadingView, FeedErrorView {
     @IBOutlet public private(set) var errorView: ErrorView?
 
-    func display(_ viewModel: FeedErrorViewModel) {
+    public func display(_ viewModel: FeedErrorViewModel) {
         if let message = viewModel.message {
             errorView?.show(message: message)
         } else {
@@ -42,7 +42,7 @@ public final class FeedViewController: UITableViewController, UITableViewDataSou
         delegate?.didRequestFeedRefresh()
     }
 
-    func display(_ viewModel: FeedLoadingViewModel) {
+    public func display(_ viewModel: FeedLoadingViewModel) {
         if viewModel.isLoading {
             refreshControl?.beginRefreshing()
         } else {
