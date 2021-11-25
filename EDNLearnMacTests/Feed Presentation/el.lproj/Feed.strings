@@ -1,0 +1,9 @@
+/* 
+  Feed.strings
+  EDNLearn
+
+  Created by Pankaj Mangotra on 25/11/21.
+  
+*/
+"FEED_VIEW_TITLE" = "Η ροή μου";
+"FEED_VIEW_CONNECTION_ERROR" = "Δεν ήταν δυνατή η σύνδεση στο διακομιστή";
