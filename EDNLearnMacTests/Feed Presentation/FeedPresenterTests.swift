@@ -80,7 +80,7 @@ class FeedPresenterTests: XCTestCase {
 
         private(set) var messages = Set<Message>()
 
-        func display(_ viewModel: ErrorViewModel) {
+        func display(_ viewModel: FeedErrorViewModel) {
             messages.insert(.display(errorMessage: viewModel.message))
         }
 
