@@ -5,6 +5,7 @@
 //  Created by Pankaj Mangotra on 04/10/21.
 //
 
+import EDNLearnMac
 import UIKit
 
 protocol FeedImageCellControllerDelegate {

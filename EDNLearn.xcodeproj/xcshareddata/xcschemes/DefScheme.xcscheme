@@ -38,6 +38,26 @@
                BlueprintName = "EDNLearnMacTests"
                ReferencedContainer = "container:EDNLearn.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "CoreDataFeedStoreTests">
+               </Test>
+               <Test
+                  Identifier = "EDNLearnMacTests">
+               </Test>
+               <Test
+                  Identifier = "LoadFeedFromCacheUseCaseTests">
+               </Test>
+               <Test
+                  Identifier = "LoadFeedFromRemoteUseCaseTests">
+               </Test>
+               <Test
+                  Identifier = "URLSessionHTTPClientTests">
+               </Test>
+               <Test
+                  Identifier = "ValidateFeedCacheUseCaseTests">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
    </TestAction>
