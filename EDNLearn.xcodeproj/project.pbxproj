@@ -474,13 +474,6 @@
 			path = "Unused iOS code";
 			sourceTree = "<group>";
 		};
-		CD559711270AD53600E9506E /* Feed Image Loader */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Feed Image Loader";
-			sourceTree = "<group>";
-		};
 		CD559712270AD54C00E9506E /* Feed UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -528,7 +521,6 @@
 			children = (
 				CD84ED6E2718122E00D591FE /* Feed Presentation */,
 				CD559712270AD54C00E9506E /* Feed UI */,
-				CD559711270AD53600E9506E /* Feed Image Loader */,
 				CD72557B26E8977E00C5CD3E /* Info.plist */,
 			);
 			path = EssentialFeediOS;
