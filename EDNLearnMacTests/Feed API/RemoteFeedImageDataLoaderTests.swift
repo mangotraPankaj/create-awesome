@@ -14,8 +14,15 @@ class RemoteFeedImageDataLoader {
         self.client = client
     }
 
-    func loadImageData(from url: URL, completion _: @escaping (Any) -> Void) {
-        client.get(from: url) { _ in }
+    func loadImageData(from url: URL, completion: @escaping (FeedImageDataLoader.Result) -> Void) {
+        client.get(from: url) { result in
+            switch result {
+            case let .failure(error):
+                completion(.failure(error))
+            default:
+                break
+            }
+        }
     }
 }
 
@@ -45,6 +52,15 @@ class RemoteFeedImageDataLoaderTests: XCTestCase {
         XCTAssertEqual(client.requestedURLs, [url, url])
     }
 
+    func test_loadImageDataFromURL_deliversErrorOnClientError() {
+        let (sut, client) = makeSUT()
+        let clientError = NSError(domain: "a client error", code: 0)
+
+        expect(sut, toCompleteWithResult: .failure(clientError), when: {
+            client.complete(with: clientError)
+        })
+    }
+
     private func makeSUT(url _: URL = anyURL(), file: StaticString = #file, line: UInt = #line) -> (sut: RemoteFeedImageDataLoader, client: HTTPClientSpy) {
         let client = HTTPClientSpy()
         let sut = RemoteFeedImageDataLoader(client: client)
@@ -53,12 +69,46 @@ class RemoteFeedImageDataLoaderTests: XCTestCase {
         return (sut, client)
     }
 
-    private class HTTPClientSpy: HTTPClient {
-        func post(_: Data, to _: URL, completion _: @escaping (HTTPClient.Result) -> Void) {}
+    private func expect(_ sut: RemoteFeedImageDataLoader,
+                        toCompleteWithResult expectedResult: FeedImageDataLoader.Result,
+                        when action: () -> Void,
+                        file: StaticString = #file,
+                        line: UInt = #line)
+    {
+        let url = URL(string: "https://a-given-url.com")!
+        let exp = expectation(description: "wait for load completion")
 
-        var requestedURLs = [URL]()
-        func get(from url: URL, completion _: @escaping (HTTPClient.Result) -> Void) {
-            requestedURLs.append(url)
+        sut.loadImageData(from: url) { recievedResult in
+            switch (recievedResult, expectedResult) {
+            case let (.success(recievedData), .success(expectedData)):
+                XCTAssertEqual(recievedData, expectedData, file: file, line: line)
+            case let (.failure(recievedError as NSError), .failure(expectedError as NSError)):
+                XCTAssertEqual(recievedError, expectedError, file: file, line: line)
+            default:
+                XCTFail("expected result:\(expectedResult) got \(recievedResult) instead", file: file, line: line)
+            }
+            exp.fulfill()
         }
+        action()
+
+        wait(for: [exp], timeout: 1.0)
+    }
+}
+
+private class HTTPClientSpy: HTTPClient {
+    func post(_: Data, to _: URL, completion _: @escaping (HTTPClient.Result) -> Void) {}
+
+    private var messages = [(url: URL, completion: (HTTPClient.Result) -> Void)]()
+
+    var requestedURLs: [URL] {
+        return messages.map { $0.url }
+    }
+
+    func get(from url: URL, completion: @escaping (HTTPClient.Result) -> Void) {
+        messages.append((url, completion))
+    }
+
+    func complete(with error: Error, at index: Int = 0) {
+        messages[index].completion(.failure(error))
     }
 }
