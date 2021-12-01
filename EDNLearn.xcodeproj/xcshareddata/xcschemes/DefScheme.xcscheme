@@ -49,12 +49,6 @@
                   Identifier = "LoadFeedFromCacheUseCaseTests">
                </Test>
                <Test
-                  Identifier = "LoadFeedFromRemoteUseCaseTests">
-               </Test>
-               <Test
-                  Identifier = "URLSessionHTTPClientTests">
-               </Test>
-               <Test
                   Identifier = "ValidateFeedCacheUseCaseTests">
                </Test>
             </SkippedTests>
