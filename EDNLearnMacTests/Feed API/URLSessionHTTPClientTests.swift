@@ -9,14 +9,9 @@ import EDNLearnMac
 import XCTest
 
 class URLSessionHTTPClientTests: XCTestCase {
-    override func setUp() {
-        super.setUp()
-        URLProtocolStub.startInterceptingRequest()
-    }
-
     override func tearDown() {
         super.tearDown()
-        URLProtocolStub.stopInterceptingRequest()
+        URLProtocolStub.removeStub()
     }
 
     func test_getFromURL_performGETRequestWithURL() {
@@ -101,7 +96,12 @@ class URLSessionHTTPClientTests: XCTestCase {
     private func makeSUT(file: StaticString = #filePath,
                          line: UInt = #line) -> HTTPClient
     {
-        let sut = URLSessionHTTPClient()
+        let configuration = URLSessionConfiguration.ephemeral
+        configuration.protocolClasses = [URLProtocolStub.self]
+
+        let session = URLSession(configuration: configuration)
+
+        let sut = URLSessionHTTPClient(session: session)
         trackForMemoryLeaks(sut, file: file, line: line)
         return sut
     }

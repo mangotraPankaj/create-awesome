@@ -27,15 +27,6 @@ class URLProtocolStub: URLProtocol {
         stub = Stub(data: data, response: response, error: error, requestObserver: nil)
     }
 
-    static func startInterceptingRequest() {
-        URLProtocol.registerClass(URLProtocolStub.self)
-    }
-
-    static func stopInterceptingRequest() {
-        URLProtocol.unregisterClass(URLProtocolStub.self)
-        stub = nil
-    }
-
     static func observeRequests(observer: @escaping (URLRequest) -> Void) {
         stub = Stub(data: nil, response: nil, error: nil, requestObserver: observer)
     }
@@ -65,6 +56,10 @@ class URLProtocolStub: URLProtocol {
             client?.urlProtocolDidFinishLoading(self)
         }
         stub.requestObserver?(request)
+    }
+
+    static func removeStub() {
+        stub = nil
     }
 
     override func stopLoading() {}
