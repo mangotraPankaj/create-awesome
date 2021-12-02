@@ -127,6 +127,17 @@ class RemoteFeedImageDataLoaderTests: XCTestCase {
         XCTAssertTrue(capturedResults.isEmpty)
     }
 
+    func test_cancelLoadImageDataURLTask_cancelsClientURLRequest() {
+        let (sut, client) = makeSUT()
+        let url = URL(string: "https://a-given-url.com")!
+
+        let task = sut.loadImageData(from: url) { _ in }
+        XCTAssertTrue(client.cancelledURLs.isEmpty, "Expected no cancelled URL request until the task is cancelled")
+
+        task.cancel()
+        XCTAssertEqual(client.cancelledURLs, [url], "Expected cancelled URL request after the teask is cancelled")
+    }
+
     // MARK: - Helper methods
 
     private func makeSUT(url _: URL = anyURL(), file: StaticString = #file, line: UInt = #line) -> (sut: RemoteFeedImageDataLoader, client: HTTPClientSpy) {
@@ -175,7 +186,10 @@ class RemoteFeedImageDataLoaderTests: XCTestCase {
 
 private class HTTPClientSpy: HTTPClient {
     private struct Task: HTTPClientTask {
-        func cancel() {}
+        let callback: () -> Void
+        func cancel() {
+            callback()
+        }
     }
 
     private var messages = [(url: URL, completion: (HTTPClient.Result) -> Void)]()
@@ -183,7 +197,9 @@ private class HTTPClientSpy: HTTPClient {
 
     func get(from url: URL, completion: @escaping (HTTPClient.Result) -> Void) -> HTTPClientTask {
         messages.append((url, completion))
-        return Task()
+        return Task { [weak self] in
+            self?.cancelledURLs.append(url)
+        }
     }
 
     func post(_: Data, to _: URL, completion _: @escaping (HTTPClient.Result) -> Void) {}
