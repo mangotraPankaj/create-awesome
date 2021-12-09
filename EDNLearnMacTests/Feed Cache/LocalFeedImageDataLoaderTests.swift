@@ -14,8 +14,24 @@ protocol FeedImageDataStore {
 }
 
 final class LocalFeedImageDataLoader: FeedImageDataLoader {
-    private struct Task: FeedImageDataLoaderTask {
-        func cancel() {}
+    private final class Task: FeedImageDataLoaderTask {
+        private var completion: ((FeedImageDataLoader.Result) -> Void)?
+
+        init(_ completion: @escaping (FeedImageDataLoader.Result) -> Void) {
+            self.completion = completion
+        }
+
+        func complete(with result: FeedImageDataLoader.Result) {
+            completion?(result)
+        }
+
+        func cancel() {
+            preventFurtherCompletions()
+        }
+
+        func preventFurtherCompletions() {
+            completion = nil
+        }
     }
 
     public enum Error: Swift.Error {
@@ -30,12 +46,13 @@ final class LocalFeedImageDataLoader: FeedImageDataLoader {
     }
 
     func loadImageData(from url: URL, completion: @escaping (FeedImageDataLoader.Result) -> Void) -> FeedImageDataLoaderTask {
+        let task = Task(completion)
         store.retrieve(dataForURL: url) { result in
-            completion(result
+            task.complete(with: result
                 .mapError { _ in Error.failed }
                 .flatMap { data in data.map { .success($0) } ?? .failure(Error.notFound) })
         }
-        return Task()
+        return task
     }
 }
 
@@ -79,6 +96,23 @@ class LocalFeedImageDataLoaderTests: XCTestCase {
             store.complete(with: foundData)
 
         })
+    }
+
+    func test_loadImageDataFromURL_doesNotDeliverResultsAfterCancellingTask() {
+        let (sut, store) = makeSUT()
+        let foundData = anyData()
+
+        var recieved = [FeedImageDataLoader.Result]()
+
+        let task = sut.loadImageData(from: anyURL()) { recieved.append($0) }
+
+        task.cancel()
+
+        store.complete(with: foundData)
+        store.complete(with: .none)
+        store.complete(with: anyError())
+
+        XCTAssertTrue(recieved.isEmpty, "Expecting no recieved results after cancelling the task")
     }
 
     // MARK: - Helpers
