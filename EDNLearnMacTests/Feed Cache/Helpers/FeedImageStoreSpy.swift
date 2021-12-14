@@ -41,4 +41,8 @@ class FeedImageStoreSpy: FeedImageDataStore {
     func completeInsertion(with error: Error, at index: Int = 0) {
         insertionCompletions[index](.failure(error))
     }
+
+    func completeInsertionSuccessfully(at index: Int = 0) {
+        insertionCompletions[index](.success(()))
+    }
 }
