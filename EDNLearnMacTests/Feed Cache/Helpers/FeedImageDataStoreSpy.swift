@@ -8,7 +8,7 @@
 import EDNLearnMac
 import Foundation
 
-class FeedImageStoreSpy: FeedImageDataStore {
+class FeedImageDataStoreSpy: FeedImageDataStore {
     enum Message: Equatable {
         case retrieve(dataFor: URL)
         case insert(data: Data, for: URL)
