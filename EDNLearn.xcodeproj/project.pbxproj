@@ -241,6 +241,7 @@
 		CD6907262685AA9E001E9E4D /* EDNLearnAPIEndToEndTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDNLearnAPIEndToEndTests.swift; sourceTree = "<group>"; };
 		CD6907282685AA9E001E9E4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD6AA02126C0FB2800CB33DC /* FeedCachePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCachePolicy.swift; sourceTree = "<group>"; };
+		CD6B8D8F277062D0009B9C62 /* FeedStore 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "FeedStore 2.xcdatamodel"; sourceTree = "<group>"; };
 		CD72557826E8977E00C5CD3E /* EssentialFeediOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EssentialFeediOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD72557B26E8977E00C5CD3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD72558026E8977E00C5CD3E /* EssentialFeediOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeediOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1757,9 +1758,10 @@
 		CD0FCF1226D4A5D500398364 /* FeedStore.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				CD6B8D8F277062D0009B9C62 /* FeedStore 2.xcdatamodel */,
 				CD0FCF1326D4A5D500398364 /* FeedStore.xcdatamodel */,
 			);
-			currentVersion = CD0FCF1326D4A5D500398364 /* FeedStore.xcdatamodel */;
+			currentVersion = CD6B8D8F277062D0009B9C62 /* FeedStore 2.xcdatamodel */;
 			path = FeedStore.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
