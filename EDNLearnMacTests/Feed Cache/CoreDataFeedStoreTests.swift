@@ -76,8 +76,9 @@ class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
     /// This would help us to avoid side-effects which may occur due to artefacts which may remain from tests , since dev/null does not write to sqlite
 
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> FeedStore {
+        let storeBundle = Bundle(for: CoreDataFeedStore.self)
         let storeURL = URL(fileURLWithPath: "/dev/null")
-        let sut = try! CoreDataFeedStore(storeURL: storeURL)
+        let sut = try! CoreDataFeedStore(storeURL: storeURL, bundle: storeBundle)
         trackForMemoryLeaks(sut, file: file, line: line)
         return sut
     }

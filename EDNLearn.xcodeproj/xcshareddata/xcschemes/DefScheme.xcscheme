@@ -43,9 +43,6 @@
                   Identifier = "CacheFeedUseCaseTests">
                </Test>
                <Test
-                  Identifier = "CoreDataFeedStoreTests">
-               </Test>
-               <Test
                   Identifier = "EDNLearnMacTests">
                </Test>
                <Test
