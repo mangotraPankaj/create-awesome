@@ -25,11 +25,11 @@ public final class CoreDataFeedStore {
         }
     }
 
-   /// The pros are that we enforce the whole Core Data stack is deallocated along with the CoreDataFeedStore class. This way, we prevent issues with Core Data operations running after the CoreDataFeedStore instance is deallocated (which can lead to unexpected runtime behavior!).
+    /// The pros are that we enforce the whole Core Data stack is deallocated along with the CoreDataFeedStore class. This way, we prevent issues with Core Data operations running after the CoreDataFeedStore instance is deallocated (which can lead to unexpected runtime behavior!).
 
-   /// The cons are that deallocating CoreDataFeedStore instances can become expensive operations since it locks until the Core Data stack is deallocated (which may take some time). But I believe it's a good tradeoff to ensure there's no unexpected behavior at runtime.
-   ///
-   
+    /// The cons are that deallocating CoreDataFeedStore instances can become expensive operations since it locks until the Core Data stack is deallocated (which may take some time). But I believe it's a good tradeoff to ensure there's no unexpected behavior at runtime.
+    ///
+
     private func cleanUpReferencesToPersistentStores() {
         context.performAndWait {
             let coordinator = self.container.persistentStoreCoordinator
