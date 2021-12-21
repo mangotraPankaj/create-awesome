@@ -89,6 +89,17 @@ class ValidateFeedCacheUseCaseTests: XCTestCase {
         })
     }
 
+    func test_validateCache_succeedsOnNonExpiredCache() {
+        let fixedCurrentDate = Date()
+        let feed = uniqueImageFeed()
+        let nonExpiredTimeStamp = fixedCurrentDate.minusFeedCacheMaxAge().adding(seconds: 1)
+        let (sut, store) = makeSUT(currentDate: { fixedCurrentDate })
+
+        expect(sut, toCompleteWith: .success(()), when: {
+            store.completeRetrieval(with: feed.local, timestamp: nonExpiredTimeStamp)
+        })
+    }
+
     func test_validateCache_doesNotDeleteInvalidCacheAfterSUTInstanceHasBeenDeallocated() {
         let store = FeedStoreSpy()
         var sut: LocalFeedLoader? = LocalFeedLoader(store: store, currentDate: Date.init)
