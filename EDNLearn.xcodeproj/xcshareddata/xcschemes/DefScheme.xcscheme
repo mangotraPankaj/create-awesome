@@ -66,9 +66,6 @@
                <Test
                   Identifier = "URLSessionHTTPClientTests">
                </Test>
-               <Test
-                  Identifier = "ValidateFeedCacheUseCaseTests">
-               </Test>
             </SkippedTests>
          </TestableReference>
       </Testables>

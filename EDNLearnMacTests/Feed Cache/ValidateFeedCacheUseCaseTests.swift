@@ -63,6 +63,24 @@ class ValidateFeedCacheUseCaseTests: XCTestCase {
         XCTAssertEqual(store.receivedMessages, [.retrieve, .deleteCachedFeed])
     }
 
+    func test_validateCache_failsOnDeletionErrorOfFailedRetrieval() {
+        let (sut, store) = makeSUT()
+        let deletionError = anyError()
+
+        expect(sut, toCompleteWith: .failure(deletionError), when: {
+            store.completeRetrieval(with: anyError())
+            store.completeDeletion(with: deletionError)
+        })
+    }
+
+    func test_validateCache_succeedsOnSuccessfulDeletionOfFailedRetrieval() {
+        let (sut, store) = makeSUT()
+        expect(sut, toCompleteWith: .success(()), when: {
+            store.completeRetrieval(with: anyError())
+            store.completeDeletionSuccessfully()
+        })
+    }
+
     func test_validateCache_doesNotDeleteInvalidCacheAfterSUTInstanceHasBeenDeallocated() {
         let store = FeedStoreSpy()
         var sut: LocalFeedLoader? = LocalFeedLoader(store: store, currentDate: Date.init)
@@ -81,5 +99,24 @@ class ValidateFeedCacheUseCaseTests: XCTestCase {
         trackForMemoryLeaks(sut, file: file, line: line)
 
         return (sut, store)
+    }
+
+    private func expect(_ sut: LocalFeedLoader, toCompleteWith expectedResult: LocalFeedLoader.ValidationResult, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line) {
+        let exp = expectation(description: "wait for load completion")
+
+        sut.validateCache { recievedResult in
+            switch (recievedResult, expectedResult) {
+            case(.success, .success):
+                break
+            case let (.failure(recievedError as NSError), .failure(expectedError as NSError)):
+                XCTAssertEqual(recievedError, expectedError, file: file, line: line)
+
+            default:
+                XCTFail("Expected result \(expectedResult), got \(recievedResult) instead", file: file, line: line)
+            }
+            exp.fulfill()
+        }
+        action()
+        wait(for: [exp], timeout: 1.0)
     }
 }
