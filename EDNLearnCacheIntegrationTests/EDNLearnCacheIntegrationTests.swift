@@ -19,33 +19,33 @@ class EDNLearnCacheIntegrationTests: XCTestCase {
         setupEmptyStoreState()
     }
 
-    func test_load_deliversNoItemsOnEmptyCache() {
+    func test_loadFeed_deliversNoItemsOnEmptyCache() {
         let sut = makeFeedLoader()
 
         expect(sut, toLoad: [])
     }
 
-    func test_load_deliversItemsSavedOnASeparateInstance() {
-        let sutToPerformSave = makeFeedLoader()
-        let sutToPerformLoad = makeFeedLoader()
+    func test_loadFeed_deliversItemsSavedOnASeparateInstance() {
+        let feedLoaderToPerformSave = makeFeedLoader()
+        let feedLoaderToPerformLoad = makeFeedLoader()
         let feed = uniqueImageFeed().models
 
-        save(feed, with: sutToPerformSave)
+        save(feed, with: feedLoaderToPerformSave)
 
-        expect(sutToPerformLoad, toLoad: feed)
+        expect(feedLoaderToPerformLoad, toLoad: feed)
     }
 
-    func test_save_overridesItemsSavedOnASeparateInstance() {
-        let sutToPerformFirstSave = makeFeedLoader()
-        let sutToPerformSecondSave = makeFeedLoader()
-        let sutToPerformLoad = makeFeedLoader()
+    func test_saveFeed_overridesItemsSavedOnASeparateInstance() {
+        let feedLoaderToPerformFirstSave = makeFeedLoader()
+        let feedLoaderToPerformSecondSave = makeFeedLoader()
+        let feedLoaderToPerformLoad = makeFeedLoader()
         let firstFeed = uniqueImageFeed().models
         let latestFeed = uniqueImageFeed().models
 
-        save(firstFeed, with: sutToPerformFirstSave)
+        save(firstFeed, with: feedLoaderToPerformFirstSave)
+        save(latestFeed, with: feedLoaderToPerformSecondSave)
 
-        save(latestFeed, with: sutToPerformSecondSave)
-        expect(sutToPerformLoad, toLoad: latestFeed)
+        expect(feedLoaderToPerformLoad, toLoad: latestFeed)
     }
 
     func test_loadImageData_deliversSavedDataOnSeparateInstance() {
