@@ -10,13 +10,21 @@ import XCTest
 
 class FeedLoaderWithFallbackComposite: FeedLoader {
     private let primary: FeedLoader
-
-    init(primary: FeedLoader, fallback _: FeedLoader) {
+    private let fallback: FeedLoader
+    init(primary: FeedLoader, fallback: FeedLoader) {
         self.primary = primary
+        self.fallback = fallback
     }
 
     func load(completion: @escaping (FeedLoader.Result) -> Void) {
-        primary.load(completion: completion)
+        primary.load { [weak self] result in
+            switch result {
+            case .success:
+                completion(result)
+            case .failure:
+                self?.fallback.load(completion: completion)
+            }
+        }
     }
 }
 
@@ -31,6 +39,23 @@ class FeedLoaderWithFallbackCompositeTests: XCTestCase {
             switch result {
             case let .success(recievedFeed):
                 XCTAssertEqual(recievedFeed, primaryFeed)
+
+            case .failure:
+                XCTFail("expected successful feed load result, got \(result) instead")
+            }
+            exp.fulfill()
+        }
+        wait(for: [exp], timeout: 1)
+    }
+
+    func test_load_deliversFallbackFeedOnPrimaryFailure() {
+        let fallbackFeed = uniqueFeed()
+        let sut = makeSUT(primaryResult: .failure(anyNSError()), fallbackResult: .success(fallbackFeed))
+        let exp = expectation(description: "Wait for load completion")
+        sut.load { result in
+            switch result {
+            case let .success(recievedFeed):
+                XCTAssertEqual(recievedFeed, fallbackFeed)
 
             case .failure:
                 XCTFail("expected successful feed load result, got \(result) instead")
@@ -60,6 +85,10 @@ class FeedLoaderWithFallbackCompositeTests: XCTestCase {
 
     private func uniqueFeed() -> [FeedImage] {
         return [FeedImage(id: UUID(), description: "any", location: "any", url: URL(string: "https://a-url.com")!)]
+    }
+
+    private func anyNSError() -> Error {
+        return NSError(domain: "error", code: 0)
     }
 
     private class LoaderStub: FeedLoader {
