@@ -772,7 +772,6 @@
 				CD10FC9E266C90CB00A84E66 /* Sources */,
 				CD10FC9F266C90CB00A84E66 /* Frameworks */,
 				CD10FCA0266C90CB00A84E66 /* Resources */,
-				CDDC85BF26A94E5F007C3F4B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -827,7 +826,6 @@
 				CD72557426E8977E00C5CD3E /* Sources */,
 				CD72557526E8977E00C5CD3E /* Frameworks */,
 				CD72557626E8977E00C5CD3E /* Resources */,
-				CD286FE326EF23E10070022B /* ShellScript */,
 				CD286FE926EF25330070022B /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -976,43 +974,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		CD286FE326EF23E10070022B /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ncd BuildTools\nSDKROOT=macosx\n#swift package update #Uncomment this line temporarily to update the version used to the latest matching your BuildTools/Package.swift file\nswift run -c release swiftformat \"$SRCROOT\"\n";
-		};
-		CDDC85BF26A94E5F007C3F4B /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "cd BuildTools\nSDKROOT=(xcrun --sdk macosx --show-sdk-path)\n#swift package update #Uncomment this line temporarily to update the version used to the latest matching your BuildTools/Package.swift file\nswift run -c release swiftformat \"$SRCROOT\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CD0FCF3726D7787000398364 /* Sources */ = {
