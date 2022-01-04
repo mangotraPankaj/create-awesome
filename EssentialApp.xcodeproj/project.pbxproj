@@ -10,6 +10,7 @@
 		CD120EAE27831441006AE564 /* FeedLoaderWithFallbackComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD120EAD27831441006AE564 /* FeedLoaderWithFallbackComposite.swift */; };
 		CD120EB0278315E2006AE564 /* FeedImageDataLoaderWithFallbackComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD120EAF278315E2006AE564 /* FeedImageDataLoaderWithFallbackComposite.swift */; };
 		CD120EB227842015006AE564 /* FeedImageDataLoaderWithFallbackComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD120EB127842015006AE564 /* FeedImageDataLoaderWithFallbackComposite.swift */; };
+		CD120EB527842108006AE564 /* XCTestCase+MemoryTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD120EB427842108006AE564 /* XCTestCase+MemoryTracking.swift */; };
 		CD4E95B227799703000632B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4E95B127799703000632B5 /* AppDelegate.swift */; };
 		CD4E95B427799703000632B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4E95B327799703000632B5 /* SceneDelegate.swift */; };
 		CD4E95B627799703000632B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4E95B527799703000632B5 /* ViewController.swift */; };
@@ -52,6 +53,7 @@
 		CD120EAD27831441006AE564 /* FeedLoaderWithFallbackComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderWithFallbackComposite.swift; sourceTree = "<group>"; };
 		CD120EAF278315E2006AE564 /* FeedImageDataLoaderWithFallbackComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderWithFallbackComposite.swift; sourceTree = "<group>"; };
 		CD120EB127842015006AE564 /* FeedImageDataLoaderWithFallbackComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderWithFallbackComposite.swift; sourceTree = "<group>"; };
+		CD120EB427842108006AE564 /* XCTestCase+MemoryTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryTracking.swift"; sourceTree = "<group>"; };
 		CD4E95AE27799703000632B5 /* EssentialApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EssentialApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD4E95B127799703000632B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD4E95B327799703000632B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD120EB3278420E0006AE564 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CD120EB427842108006AE564 /* XCTestCase+MemoryTracking.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		CD4E95A527799703000632B5 = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +135,7 @@
 		CD4E95C727799709000632B5 /* EssentialAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				CD120EB3278420E0006AE564 /* Helpers */,
 				CD4E95F92779A75B000632B5 /* FeedLoaderWithFallbackCompositeTests.swift */,
 				CD120EAF278315E2006AE564 /* FeedImageDataLoaderWithFallbackComposite.swift */,
 			);
@@ -262,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD120EB0278315E2006AE564 /* FeedImageDataLoaderWithFallbackComposite.swift in Sources */,
+				CD120EB527842108006AE564 /* XCTestCase+MemoryTracking.swift in Sources */,
 				CD4E96082779A8FE000632B5 /* FeedLoaderWithFallbackCompositeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
