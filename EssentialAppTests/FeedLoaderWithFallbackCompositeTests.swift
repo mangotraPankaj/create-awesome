@@ -30,6 +30,10 @@ class FeedLoaderWithFallbackCompositeTests: XCTestCase {
 
     // MARK: - Helpers
 
+    private func uniqueFeed() -> [FeedImage] {
+        return [FeedImage(id: UUID(), description: "any", location: "any", url: anyURL())]
+    }
+
     private func makeSUT(primaryResult: FeedLoader.Result, fallbackResult: FeedLoader.Result, file: StaticString = #file, line: UInt = #line) -> FeedLoader {
         let primaryLoader = LoaderStub(result: primaryResult)
         let fallbackLoader = LoaderStub(result: fallbackResult)
@@ -55,14 +59,6 @@ class FeedLoaderWithFallbackCompositeTests: XCTestCase {
             exp.fulfill()
         }
         wait(for: [exp], timeout: 1)
-    }
-
-    private func uniqueFeed() -> [FeedImage] {
-        return [FeedImage(id: UUID(), description: "any", location: "any", url: URL(string: "https://a-url.com")!)]
-    }
-
-    private func anyNSError() -> Error {
-        return NSError(domain: "error", code: 0)
     }
 
     private class LoaderStub: FeedLoader {
